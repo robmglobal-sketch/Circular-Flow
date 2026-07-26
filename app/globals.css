@@ -1,26 +1,287 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN TOKENS — CircularFlow Global Styles
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Colors ── */
+  --color-primary: #163A5F;
+  --color-secondary: #18A0A8;
+  --color-tertiary: #D4A017;
+  --background: #FEFDFB;
+  --foreground: #163A5F;
+
+  /* Tints & shades (utility palette) */
+  --color-primary-light: #1e4f80;
+  --color-primary-dark: #0f2a45;
+  --color-secondary-light: #1fbdc6;
+  --color-secondary-dark: #127a80;
+  --color-tertiary-light: #e6b730;
+  --color-tertiary-dark: #b08712;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F8F6F2;
+  --color-border: rgba(22, 58, 95, 0.1);
+  --color-border-strong: rgba(22, 58, 95, 0.2);
+
+  /* Text */
+  --color-text-primary: #163A5F;
+  --color-text-secondary: #4A6A8A;
+  --color-text-muted: #8A9AB0;
+  --color-text-inverse: #FEFDFB;
+
+  /* ── Golden Ratio Spacing (φ = 1.618) ── */
+  --space-xs: 0.382rem;   /*  ~6px  */
+  --space-sm: 0.618rem;   /* ~10px  */
+  --space-md: 1rem;       /*  16px  */
+  --space-lg: 1.618rem;   /* ~26px  */
+  --space-xl: 2.618rem;   /* ~42px  */
+  --space-2xl: 4.236rem;  /* ~68px  */
+  --space-3xl: 6.854rem;  /* ~110px */
+  --space-4xl: 11.089rem; /* ~177px */
+
+  /* ── Golden Ratio Typography Scale ── */
+  --text-xs: 0.618rem;    /* ~10px  */
+  --text-sm: 0.764rem;    /* ~12px  */
+  --text-base: 1rem;      /*  16px  */
+  --text-lg: 1.236rem;    /* ~20px  */
+  --text-xl: 1.618rem;    /* ~26px  */
+  --text-2xl: 2.058rem;   /* ~33px  */
+  --text-3xl: 2.618rem;   /* ~42px  */
+  --text-4xl: 4.236rem;   /* ~68px  */
+  --text-5xl: 6.854rem;   /* ~110px */
+
+  /* ── Transitions ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.382rem;
+  --radius-md: 0.618rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.618rem;
+  --radius-full: 9999px;
 }
 
+/* ── Tailwind v4 Theme Integration ── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-dm-sans);
+  --font-accent: var(--font-lugrasimo);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-primary);
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.618; /* Golden ratio line-height */
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.236; /* Tighter line-height for headings */
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+}
+
+h6 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-xs);
+}
+
+/* Italic / accent heading style — Lugrasimo */
+.heading-accent,
+.heading-italic {
+  font-family: var(--font-lugrasimo), "Lugrasimo", cursive;
+  font-style: italic;
+  font-weight: 400;
+}
+
+p, li, span, label, input, textarea, select, button {
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+}
+
+p {
+  font-size: var(--text-base);
+  line-height: 1.618;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out-expo);
+}
+
+a:hover {
+  color: var(--color-secondary-dark);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Golden ratio section spacing */
+.section-padding {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.section-padding-sm {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+/* Container */
+.container-narrow {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.container-wide {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.container-full {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+/* Text color utilities */
+.text-primary { color: var(--color-primary); }
+.text-secondary-color { color: var(--color-secondary); }
+.text-tertiary { color: var(--color-tertiary); }
+.text-muted { color: var(--color-text-muted); }
+
+/* Background utilities */
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-alt { background-color: var(--color-surface-alt); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-tertiary { background-color: var(--color-tertiary); }
+
+/* ============================================
+   SELECTION & SCROLLBAR
+   ============================================ */
+
+::selection {
+  background-color: rgba(24, 160, 168, 0.2);
+  color: var(--color-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* ============================================
+   FOCUS STYLES (Accessibility)
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

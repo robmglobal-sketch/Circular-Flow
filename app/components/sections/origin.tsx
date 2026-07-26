@@ -1,0 +1,182 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { BookOpen, Play, X } from "@phosphor-icons/react";
+import Button from "@/app/components/Button";
+
+const WORKSHOP_IMG = "https://media.base44.com/images/public/6a63c33c63a63db25193f4e5/9b9c41626_generated_23a687b9.png";
+// Placeholder high-res video URL; replace with your actual origin video file or link when ready
+const VIDEO_URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
+
+const STATS = [
+  { num: "30+", label: "Years of Impact", pct: 100 },
+  { num: "12", label: "Creative Branches", pct: 82 },
+  { num: "3", label: "Programs in Beta", pct: 65 },
+  { num: "1", label: "Connected Mission", pct: 100 },
+];
+
+export default function OriginSection() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Close video modal on ESC key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsPlaying(false);
+    };
+    if (isPlaying) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isPlaying]);
+
+  return (
+    <section className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white text-[var(--color-primary)] relative overflow-hidden ">
+      {/* Subtle ambient radial warmth for white background */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
+
+      <div className="relative z-10 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* ══ Left Column: Interactive Video Thumbnail / Player Overlay ══ */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(22,58,95,0.12)] border border-[var(--color-primary)]/15 group bg-[#091b2e]">
+              {/* Cover Thumbnail Image (Loaded upfront instead of heavy video) */}
+              <img
+                src={WORKSHOP_IMG}
+                alt="A child shaping aluminum foil creatures — the origin of Circular Flow"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[#091b2e]/45 transition-colors duration-300 group-hover:bg-[#091b2e]/30" />
+              
+              {/* Interactive Play Button Trigger */}
+              <button
+                onClick={() => setIsPlaying(true)}
+                className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer border-none bg-transparent w-full h-full p-0 focus:outline-none"
+                aria-label="Play Fullscreen Origin Video"
+              >
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center text-white group-hover:scale-110 sm:group-hover:scale-115 transition-all duration-300 shadow-[0_12px_35px_rgba(24,160,168,0.45)]">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--color-secondary)] text-white flex items-center justify-center shadow-lg">
+                    <Play size={28} weight="fill" className="ml-1 text-white" />
+                  </div>
+                </div>
+                
+                {/* Floating Action Badge */}
+                <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 bg-[#0b1d30]/85 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs font-semibold uppercase tracking-wider shadow-md">
+                  <Play size={14} weight="fill" className="text-[var(--color-secondary)]" />
+                  Watch Origin Video
+                </div>
+              </button>
+            </div>
+          </div>
+
+          {/* ══ Right Column: Editorial Origin Content ══ */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF7F8] border border-[var(--color-secondary)]/35 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wide uppercase w-fit mb-6 shadow-xs">
+              <BookOpen size={16} weight="bold" />
+              <span>The Origin</span>
+            </div>
+
+            {/* Heading */}
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] !text-[var(--color-primary)] leading-[1.18] mb-8 font-extrabold tracking-tight">
+              A Child Who{" "}
+              <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
+                Shaped Worlds
+              </span>{" "}
+              From Foil
+            </h2>
+
+            {/* Paragraphs */}
+            <div className="space-y-5 font-sans text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="mb-0 !text-[#4A6A8A]">
+                Growing up in Detroit during a time when family, community, culture, and collective responsibility still had a strong presence, a young Robert Mitchell Jr. would sit for hours sculpting aluminum foil into imaginary creatures and worlds and drawing the characters that would later populate his stories.
+              </p>
+              
+              <p className="mb-0 !text-[#4A6A8A]">
+                That child who gave life to inanimate objects never stopped. For nearly thirty years, he has worked as an educator, author, filmmaker, musician, illustrator, and licensed clinical social worker but the impulse remained the same:{" "}
+                <span className="!text-[var(--color-primary)] italic font-semibold">
+                  to take raw material and transform it into something that helps people see themselves differently.
+                </span>
+              </p>
+              
+              <p className="font-sans !text-[#10787E] text-base sm:text-lg font-semibold leading-relaxed pt-2 mb-0">
+                The same child who shaped aluminum foil into imaginary worlds now transforms stories, music, films, workshops, products, and programs into tools for learning, healing, innovation, and community growth.
+              </p>
+            </div>
+
+            {/* Action Button */}
+            <div className="mt-8 pt-2">
+              <Link href="/about" className="no-underline inline-block">
+                <Button variant="primary">
+                  Learn More About Robert
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+
+        {/* ══ Bottom Stat Callouts Bar ══ */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 border-t border-[var(--color-primary)]/15 pt-14 lg:pt-16 mt-16 lg:mt-24">
+          {STATS.map((s) => (
+            <div key={s.label} className="group">
+              <div className="font-heading text-4xl sm:text-5xl lg:text-6xl !text-[var(--color-secondary)] font-extrabold leading-none mb-2.5 tracking-tight group-hover:scale-105 transition-transform duration-300 origin-left">
+                {s.num}
+              </div>
+              <div className="font-sans text-xs sm:text-sm !text-[var(--color-primary)]/85 font-bold uppercase tracking-wider mb-4">
+                {s.label}
+              </div>
+              <div className="h-1.5 w-full bg-[var(--color-primary)]/10 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-tertiary)] rounded-full transition-all duration-1000"
+                  style={{ width: `${s.pct}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ══ Fullscreen Video Playback Modal (Loads video ONLY when triggered) ══ */}
+      {isPlaying && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 lg:p-10 animate-fade-in"
+          onClick={() => setIsPlaying(false)}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setIsPlaying(false)}
+            className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors duration-200 border border-white/20 cursor-pointer"
+            aria-label="Close fullscreen video"
+          >
+            <X size={24} weight="bold" />
+          </button>
+
+          {/* Video Player Box */}
+          <div
+            className="relative w-full max-w-[1200px] aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/20"
+            onClick={(e) => e.stopPropagation()} // Prevent accidental modal closing when clicking video controls
+          >
+            <video
+              src={VIDEO_URL}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full object-contain bg-black"
+            >
+              Your browser does not support HTML5 video playback.
+            </video>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
