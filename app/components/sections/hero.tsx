@@ -8,12 +8,15 @@ import Button from "@/app/components/Button";
 export default function Hero() {
   return (
     <section className="relative pt-12 md:pt-20 pb-24 lg:pb-32 overflow-hidden bg-[var(--background)]">
+      {/* Background Grid Pattern (0.5 opacity at top fading to 0 at bottom) */}
+      <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+
       {/* Subtle background ambient glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/10 via-[var(--color-primary)]/5 to-transparent blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-[40%] right-10 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/10 via-[var(--color-primary)]/5 to-transparent blur-3xl pointer-events-none z-0" />
+      <div className="absolute top-[40%] right-10 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl pointer-events-none z-0" />
 
       {/* ── Top Header Section ── */}
-      <div className="max-w-[1200px] mx-auto px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-12 lg:mb-16">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-12 lg:mb-16">
         <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold text-[var(--color-primary)] tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
           Where Storytelling, Technology, Education, and Community{" "}
           <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
@@ -38,13 +41,13 @@ export default function Hero() {
       </div>
 
       {/* ── 5-Column Bento Grid Section (Arch & Staggered Structure) ── */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-5 items-start">
           
           {/* ══ Column 1 ══ */}
           <div className="flex flex-col gap-5">
             {/* Card 1 — Hero Image */}
-            <div className="group relative h-[320px] sm:h-[340px] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(22,58,95,0.1)] hover:shadow-[0_15px_40px_rgba(22,58,95,0.15)] transition-all duration-500 border border-[var(--color-border)]/50">
+            <div className="group relative h-[320px] sm:h-[340px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
                 src="/hero/1.jpg"
                 alt="Every Journey Begins With One Opportunity"
@@ -69,7 +72,7 @@ export default function Hero() {
             </div>
 
             {/* Card 3 — Statistics Card (Gradient) */}
-            <div className="h-[200px] sm:h-[220px] bg-gradient-to-br from-[var(--color-secondary)] via-[#168f96] to-[#0f6c73] rounded-[2rem] p-6 lg:p-7 flex flex-col justify-center text-white shadow-[0_10px_30px_rgba(24,160,168,0.25)] hover:shadow-[0_15px_35px_rgba(24,160,168,0.35)] transition-all duration-300 relative overflow-hidden">
+            <div className="h-[200px] sm:h-[220px] bg-gradient-to-br from-[var(--color-secondary)] via-[#168f96] to-[#0f6c73] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 -mr-6 -mt-6 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none" />
               <div className="text-3xl sm:text-4xl font-extrabold font-heading !text-white tracking-tight mb-1">
                 12,500+
@@ -83,7 +86,7 @@ export default function Hero() {
           {/* ══ Column 2 (Staggered slightly down on large screens) ══ */}
           <div className="flex flex-col lg:pt-8">
             {/* Card 2 — Community Impact */}
-            <div className="group relative h-[420px] sm:h-[460px] lg:h-[550px] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(22,58,95,0.08)] hover:shadow-[0_15px_40px_rgba(22,58,95,0.15)] transition-all duration-500 border border-[var(--color-border)]/50">
+            <div className="group relative h-[420px] sm:h-[460px] lg:h-[550px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
                 src="/hero/2.jpg"
                 alt="Building Strong Communities"
@@ -110,7 +113,7 @@ export default function Hero() {
           {/* ══ Column 3 (Center column, positioned lower to create an arch with breathing room below buttons) ══ */}
           <div className="flex flex-col md:col-span-2 lg:col-span-1 lg:pt-28">
             {/* Card 7 — Educational Philosophy */}
-            <div className="h-full min-h-[340px] lg:h-[430px] bg-gradient-to-br from-[#5B7696] via-[#435F7E] to-[#2D4766] rounded-[2rem] p-6 lg:p-7 flex flex-col justify-center text-white shadow-[0_12px_35px_rgba(45,71,102,0.25)] hover:shadow-[0_18px_45px_rgba(45,71,102,0.35)] transition-all duration-300 relative overflow-hidden border border-white/10">
+            <div className="h-full min-h-[340px] lg:h-[430px] bg-gradient-to-br from-[#5B7696] via-[#435F7E] to-[#2D4766] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden border border-white/10">
               <div className="text-xs sm:text-sm font-bold !text-white mb-2.5 tracking-tight leading-tight font-heading">
                 <span className="text-lg sm:text-xl font-extrabold uppercase tracking-wide mr-1">LEARN.</span> 
                 Create. Lead.
@@ -124,7 +127,7 @@ export default function Hero() {
           {/* ══ Column 4 (Staggered slightly down to mirror Column 2) ══ */}
           <div className="flex flex-col lg:pt-10">
             {/* Card 4 — Classroom Learning */}
-            <div className="group relative h-[420px] sm:h-[460px] lg:h-[530px] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(22,58,95,0.08)] hover:shadow-[0_15px_40px_rgba(22,58,95,0.15)] transition-all duration-500 border border-[var(--color-border)]/50">
+            <div className="group relative h-[420px] sm:h-[460px] lg:h-[530px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
                 src="/hero/3.jpg"
                 alt="Learning That Inspires Action"
@@ -151,8 +154,8 @@ export default function Hero() {
           {/* ══ Column 5 (Rightmost column) ══ */}
           <div className="flex flex-col gap-5">
             {/* Card 5 — Educational Resources (Dark Green Card) */}
-            <div className="h-[270px] sm:h-[290px] bg-gradient-to-br from-[#114B3B] via-[#0B3D2F] to-[#072B21] rounded-[2rem] p-6 lg:p-7 flex flex-col justify-center text-white shadow-[0_10px_30px_rgba(17,75,59,0.25)] hover:shadow-[0_15px_35px_rgba(17,75,59,0.35)] transition-all duration-300 border border-[#236b56]/40 relative overflow-hidden">
-              <div className="inline-flex items-center gap-1.5 bg-emerald-400/15 border border-emerald-400/30 !text-white text-[10px] px-2.5 py-0.5 rounded-full font-semibold mb-2.5 uppercase tracking-wider w-fit shadow-inner">
+            <div className="h-[270px] sm:h-[290px] bg-gradient-to-br from-[#114B3B] via-[#0B3D2F] to-[#072B21] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#236b56]/40 relative overflow-hidden">
+              <div className="inline-flex items-center gap-1.5 bg-emerald-400/15 border border-emerald-400/30 !text-white text-[10px] px-2.5 py-0.5 rounded-full font-semibold mb-2.5 uppercase tracking-wider w-fit">
                 Preview Available
               </div>
               <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug font-heading">
@@ -165,7 +168,7 @@ export default function Hero() {
             </div>
 
             {/* Card 6 — Innovation & Creativity */}
-            <div className="group relative h-[250px] sm:h-[270px] rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(22,58,95,0.08)] hover:shadow-[0_15px_40px_rgba(22,58,95,0.15)] transition-all duration-500 border border-[var(--color-border)]/50">
+            <div className="group relative h-[250px] sm:h-[270px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
                 src="/hero/4.png"
                 alt="Innovation in Every Experience"

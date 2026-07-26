@@ -60,10 +60,12 @@
   --duration-slow: 500ms;
 
   /* ── Border Radius ── */
-  --radius-sm: 0.382rem;
-  --radius-md: 0.618rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.618rem;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
+  --radius-2xl: 10px;
+  --radius-3xl: 10px;
   --radius-full: 9999px;
 }
 
@@ -75,6 +77,13 @@
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-tertiary: var(--color-tertiary);
+
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
+  --radius-2xl: 10px;
+  --radius-3xl: 10px;
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-dm-sans);
@@ -284,4 +293,17 @@ strong {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ============================================
+   GRID BACKGROUND PATTERN
+   ============================================ */
+
+.hero-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(22, 58, 95, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 58, 95, 0.14) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }

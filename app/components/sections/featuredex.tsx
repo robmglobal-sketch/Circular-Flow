@@ -140,7 +140,7 @@ export default function FeaturedExperiences() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
             <Sparkle size={16} weight="bold" className="text-[var(--color-secondary)]" />
             <span>Featured Experiences</span>
           </div>

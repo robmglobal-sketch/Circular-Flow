@@ -69,7 +69,7 @@ export default function EcosystemSection() {
         
         {/* ══ Header ══ */}
         <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
             <Atom size={18} weight="bold" className="text-[var(--color-secondary)]" />
             <span>Interactive Ecosystem Map</span>
           </div>
@@ -92,7 +92,7 @@ export default function EcosystemSection() {
           
           {/* Left / Center: Interactive SVG Nexus */}
           <div className="lg:col-span-7 flex justify-center relative">
-            <div className="relative p-2 sm:p-6  rounded-[2.5rem]   overflow-hidden">
+            <div className="relative p-2 sm:p-6  rounded-[10px]   overflow-hidden">
               <svg
                 width={size}
                 height={size}
@@ -125,7 +125,7 @@ export default function EcosystemSection() {
                 })}
 
                 {/* Center hub */}
-                <circle cx={cx} cy={cy} r={innerR} fill="#163A5F" stroke="#18A0A8" strokeWidth="2.5" className="shadow-lg" />
+                <circle cx={cx} cy={cy} r={innerR} fill="#163A5F" stroke="#18A0A8" strokeWidth="2.5" className="shadow-md" />
                 <circle cx={cx} cy={cy} r={innerR - 10} fill="none" stroke="rgba(24,160,168,0.4)" strokeWidth="1" strokeDasharray="3 4" />
                 <text x={cx} y={cy - 7} textAnchor="middle" fill="#18A0A8" fontFamily="var(--font-dm-sans), sans-serif" fontSize={isMobile ? "9" : "11"} fontWeight="800" letterSpacing="2">
                   CIRCULAR
@@ -223,7 +223,7 @@ export default function EcosystemSection() {
           {/* Right: Dynamic Info Panel Card */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             {hoveredNode ? (
-              <div className="bg-gradient-to-br from-[#163A5F] to-[#0f2a45] text-white rounded-[2rem] p-8 sm:p-10 shadow-[0_20px_50px_rgba(22,58,95,0.25)] border border-white/10 transition-all duration-300 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#163A5F] to-[#0f2a45] text-white rounded-[10px] p-8 sm:p-10 shadow-md border border-white/10 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-[var(--color-secondary)]/20 rounded-full blur-2xl pointer-events-none" />
                 
                 <div className="flex items-center gap-2 mb-4">
@@ -248,7 +248,7 @@ export default function EcosystemSection() {
                 </Link>
               </div>
             ) : (
-              <div className="bg-slate-50/90 rounded-[2rem] p-8 sm:p-10 border border-slate-200 shadow-sm flex flex-col justify-between">
+              <div className="bg-slate-50/90 rounded-[10px] p-8 sm:p-10 border border-slate-200 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2.5 mb-4">
                     <Info size={20} weight="fill" className="text-[var(--color-secondary)]" />
@@ -268,15 +268,15 @@ export default function EcosystemSection() {
 
                 {/* Legend Pills */}
                 <div className="flex flex-wrap gap-3 border-t border-slate-200/80 pt-6">
-                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
+                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#18A0A8]" />
                     <span className="font-sans text-xs font-semibold text-[#163A5F]">Projects &amp; Content</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
+                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#2E7D32]" />
                     <span className="font-sans text-xs font-semibold text-[#163A5F]">Programs (Beta)</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
+                  <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#B8860B]" />
                     <span className="font-sans text-xs font-semibold text-[#163A5F]">Coming Soon / Awards</span>
                   </div>
@@ -296,9 +296,9 @@ export default function EcosystemSection() {
                     onClick={() => router.push(node.path)}
                     onMouseEnter={() => setHovered(node.id)}
                     onMouseLeave={() => setHovered(null)}
-                    className={`text-left px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`text-left px-3 py-1.5 rounded-full border text-xs font-semibold transition-all duration-200 cursor-pointer ${
                       hovered === node.id
-                        ? "bg-[#163A5F] text-white border-[#163A5F] shadow-sm"
+                        ? "bg-[#163A5F] text-white border-[#163A5F]"
                         : "bg-white text-[#163A5F] border-slate-200 hover:border-[var(--color-secondary)]"
                     }`}
                   >

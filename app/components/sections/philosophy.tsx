@@ -38,7 +38,7 @@ export default function PhilosophySection() {
         
         {/* Section Header Badge */}
         <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-tertiary)]/15 border border-[var(--color-tertiary)]/40 text-[var(--color-tertiary)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-5 shadow-inner">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-tertiary)]/15 border border-[var(--color-tertiary)]/40 text-[var(--color-tertiary)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-5">
             <Sparkle size={16} weight="fill" className="text-[var(--color-tertiary)]" />
             <span>The Flow · Philosophy</span>
           </div>
@@ -56,7 +56,7 @@ export default function PhilosophySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Glassmorphic Spotlight Quote Card (7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[2.5rem] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-[0_20px_50px_rgba(4,14,26,0.4)] group">
+          <div className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[10px] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-md group">
             {/* Giant decorative watermark quote icon */}
             <Quotes
               size={180}
@@ -66,7 +66,7 @@ export default function PhilosophySection() {
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-[var(--color-secondary)]/10 to-transparent blur-2xl pointer-events-none" />
 
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-[var(--color-tertiary)]/20 border border-[var(--color-tertiary)]/40 flex items-center justify-center text-[var(--color-tertiary)] mb-8 shadow-md">
+              <div className="w-12 h-12 rounded-[5px] bg-[var(--color-tertiary)]/20 border border-[var(--color-tertiary)]/40 flex items-center justify-center text-[var(--color-tertiary)] mb-8 shadow-sm">
                 <Quotes size={26} weight="fill" />
               </div>
 
@@ -81,7 +81,7 @@ export default function PhilosophySection() {
 
             {/* Founder Signature Footer */}
             <div className="relative z-10 pt-10 mt-10 border-t border-white/15 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-tertiary)] p-0.5 shrink-0 shadow-lg">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-secondary)] to-[var(--color-tertiary)] p-0.5 shrink-0 shadow-sm">
                 <div className="w-full h-full rounded-full bg-[#163A5F] flex items-center justify-center text-white font-bold text-sm tracking-wider font-heading">
                   RM
                 </div>
@@ -110,9 +110,9 @@ export default function PhilosophySection() {
                 return (
                   <div
                     key={p.title}
-                    className="bg-white/[0.03] hover:bg-white/[0.07] backdrop-blur-md border border-white/10 hover:border-[var(--color-secondary)]/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 group flex items-start gap-4 shadow-sm"
+                    className="bg-white/[0.03] hover:bg-white/[0.07] backdrop-blur-md border border-white/10 hover:border-[var(--color-secondary)]/50 rounded-[10px] p-5 sm:p-6 transition-all duration-300 group flex items-start gap-4"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[var(--color-secondary)]/15 border border-[var(--color-secondary)]/30 text-[var(--color-secondary)] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[var(--color-secondary)] group-hover:text-white transition-all duration-300 shadow-inner">
+                    <div className="w-10 h-10 rounded-[5px] bg-[var(--color-secondary)]/15 border border-[var(--color-secondary)]/30 text-[var(--color-secondary)] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[var(--color-secondary)] group-hover:text-white transition-all duration-300">
                       <IconComponent size={20} weight="bold" />
                     </div>
                     <div>

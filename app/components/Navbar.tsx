@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { List, X, CaretDown } from "@phosphor-icons/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/app/components/Button";
 
 /* ──────────────────────────────────────────────
@@ -38,6 +39,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isNavHovered, setIsNavHovered] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* ── Scroll listener ── */
@@ -79,11 +81,13 @@ export default function Navbar() {
 
   return (
     <nav
+      onMouseEnter={() => setIsNavHovered(true)}
+      onMouseLeave={() => setIsNavHovered(false)}
       className={`
         fixed top-0 left-0 right-0 z-50
         bg-[var(--color-surface)]
         transition-shadow duration-500 ease-[var(--ease-out-expo)]
-        ${scrolled ? "shadow-[0_2px_20px_rgba(22,58,95,0.08)]" : ""}
+        ${scrolled ? "shadow-sm" : ""}
       `}
       role="navigation"
       aria-label="Main navigation"
@@ -107,9 +111,13 @@ export default function Navbar() {
           {navItems.map((item) => (
             <div
               key={item.label}
-              className="relative"
-              onMouseEnter={() => item.dropdown && openDropdown(item.label)}
-              onMouseLeave={() => item.dropdown && closeDropdown()}
+              className="relative py-2"
+              onMouseEnter={() => {
+                if (item.dropdown) openDropdown(item.label);
+              }}
+              onMouseLeave={() => {
+                if (item.dropdown) closeDropdown();
+              }}
             >
               <Link
                 href={item.path}
@@ -141,13 +149,16 @@ export default function Navbar() {
                 <div
                   className="
                     absolute top-full left-0 mt-3 w-60
-                    bg-[var(--color-surface)] rounded-xl
-                    shadow-[0_12px_40px_rgba(22,58,95,0.12)]
+                    bg-[var(--color-surface)] rounded-[10px]
+                    shadow-md
                     border border-[var(--color-border)]
                     overflow-hidden
                     animate-[fadeSlideDown_0.25s_ease-out]
                   "
-                  onMouseEnter={() => openDropdown(item.label)}
+                  onMouseEnter={() => {
+                    openDropdown(item.label);
+                    setHoveredNav(item.label);
+                  }}
                   onMouseLeave={() => closeDropdown()}
                 >
                   {item.dropdown.map((sub, idx) => (
@@ -184,7 +195,7 @@ export default function Navbar() {
             className="
               lg:hidden relative w-10 h-10
               flex items-center justify-center
-              rounded-full
+              rounded-[5px]
               text-[var(--color-primary)] hover:text-[var(--color-secondary)]
               transition-colors duration-300
               cursor-pointer
@@ -200,6 +211,29 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* ── Framer Motion Moving Gradient Border for Whole Nav ── */}
+      <AnimatePresence>
+        {isNavHovered && (
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[var(--color-secondary)] via-[#163A5F] to-[var(--color-tertiary)] bg-[length:200%_auto]"
+            initial={{ opacity: 0, backgroundPosition: "0% center" }}
+            animate={{ 
+              opacity: 1, 
+              backgroundPosition: ["0% center", "100% center", "0% center"] 
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              opacity: { duration: 0.3 },
+              backgroundPosition: { 
+                duration: 3, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }
+            }}
+          />
+        )}
+      </AnimatePresence>
 
       {/* ══════ Mobile / Tablet Menu ══════ */}
       <div

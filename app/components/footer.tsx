@@ -102,12 +102,12 @@ export default function Footer() {
                       {item.label}
                     </Link>
                     {item.beta && (
-                      <span className="font-mono text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded uppercase tracking-wider leading-none">
+                      <span className="font-mono text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded-full uppercase tracking-wider leading-none">
                         BETA
                       </span>
                     )}
                     {item.soon && (
-                      <span className="font-mono text-[9px] font-bold bg-[var(--color-tertiary)]/20 text-[#fad061] border border-[var(--color-tertiary)]/40 px-1.5 py-0.5 rounded uppercase tracking-wider leading-none">
+                      <span className="font-mono text-[9px] font-bold bg-[var(--color-tertiary)]/20 text-[#fad061] border border-[var(--color-tertiary)]/40 px-1.5 py-0.5 rounded-full uppercase tracking-wider leading-none">
                         SOON
                       </span>
                     )}

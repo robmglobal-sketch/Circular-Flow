@@ -47,7 +47,7 @@ export default function OriginSection() {
           
           {/* ══ Left Column: Interactive Video Thumbnail / Player Overlay ══ */}
           <div className="lg:col-span-6 relative">
-            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(22,58,95,0.12)] border border-[var(--color-primary)]/15 group bg-[#091b2e]">
+            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-[10px] overflow-hidden shadow-sm border border-[var(--color-primary)]/15 group bg-[#091b2e]">
               {/* Cover Thumbnail Image (Loaded upfront instead of heavy video) */}
               <img
                 src={WORKSHOP_IMG}
@@ -62,14 +62,14 @@ export default function OriginSection() {
                 className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer border-none bg-transparent w-full h-full p-0 focus:outline-none"
                 aria-label="Play Fullscreen Origin Video"
               >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center text-white group-hover:scale-110 sm:group-hover:scale-115 transition-all duration-300 shadow-[0_12px_35px_rgba(24,160,168,0.45)]">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--color-secondary)] text-white flex items-center justify-center shadow-lg">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center text-white group-hover:scale-110 sm:group-hover:scale-115 transition-all duration-300 shadow-md">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--color-secondary)] text-white flex items-center justify-center shadow-sm">
                     <Play size={28} weight="fill" className="ml-1 text-white" />
                   </div>
                 </div>
                 
                 {/* Floating Action Badge */}
-                <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 bg-[#0b1d30]/85 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs font-semibold uppercase tracking-wider shadow-md">
+                <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 bg-[#0b1d30]/85 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs font-semibold uppercase tracking-wider shadow-sm">
                   <Play size={14} weight="fill" className="text-[var(--color-secondary)]" />
                   Watch Origin Video
                 </div>
@@ -80,7 +80,7 @@ export default function OriginSection() {
           {/* ══ Right Column: Editorial Origin Content ══ */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF7F8] border border-[var(--color-secondary)]/35 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wide uppercase w-fit mb-6 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF7F8] border border-[var(--color-secondary)]/35 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wide uppercase w-fit mb-6">
               <BookOpen size={16} weight="bold" />
               <span>The Origin</span>
             </div>
@@ -154,7 +154,7 @@ export default function OriginSection() {
           {/* Close Button */}
           <button
             onClick={() => setIsPlaying(false)}
-            className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors duration-200 border border-white/20 cursor-pointer"
+            className="absolute top-6 right-6 z-50 w-12 h-12 rounded-[5px] bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors duration-200 border border-white/20 cursor-pointer"
             aria-label="Close fullscreen video"
           >
             <X size={24} weight="bold" />
@@ -162,7 +162,7 @@ export default function OriginSection() {
 
           {/* Video Player Box */}
           <div
-            className="relative w-full max-w-[1200px] aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/20"
+            className="relative w-full max-w-[1200px] aspect-video bg-black rounded-[10px] overflow-hidden shadow-lg border border-white/20"
             onClick={(e) => e.stopPropagation()} // Prevent accidental modal closing when clicking video controls
           >
             <video

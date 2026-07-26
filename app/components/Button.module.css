@@ -11,7 +11,7 @@
   display: inline-flex;
   height: 3.5rem;
   align-items: center;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   padding-left: var(--space-xl);
   padding-right: var(--space-xl);
   font-family: var(--font-inter), "Inter", system-ui, sans-serif;
@@ -56,7 +56,7 @@
 
 .buttonBg {
   overflow: hidden;
-  border-radius: 2rem;
+  border-radius: 9999px;
   position: absolute;
   top: 0;
   left: 0;

@@ -31,12 +31,12 @@ export default function FeatureExCard({ project }: FeatureExCardProps) {
   const iconPath = `/featureExIcon/${project.id}.png`;
 
   return (
-    <div className="bg-white rounded-[2rem] p-6 lg:p-7 border border-slate-200/80 shadow-[0_10px_30px_rgba(22,58,95,0.05)] hover:shadow-[0_20px_45px_rgba(22,58,95,0.12)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative overflow-hidden">
+    <div className="bg-white rounded-[10px] p-6 lg:p-7 border border-slate-200/80 shadow-xs hover:shadow-sm transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative overflow-hidden">
       {/* Top Header Row */}
       <div>
         <div className="flex items-center justify-between gap-3 mb-5">
           {/* Icon Container with Fallback */}
-          <div className="w-12 h-12 rounded-2xl bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/25 flex items-center justify-center text-[var(--color-secondary)] shrink-0 overflow-hidden shadow-2xs group-hover:scale-105 transition-transform duration-300">
+          <div className="w-12 h-12 rounded-[5px] bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/25 flex items-center justify-center text-[var(--color-secondary)] shrink-0 overflow-hidden group-hover:scale-105 transition-transform duration-300">
             {!imgError ? (
               <img
                 src={iconPath}
@@ -82,7 +82,7 @@ export default function FeatureExCard({ project }: FeatureExCardProps) {
         </p>
 
         {/* Key Specifications Grid */}
-        <div className="bg-slate-50/80 rounded-xl p-3.5 border border-slate-200/70 mb-5 space-y-2 text-xs font-sans">
+        <div className="bg-slate-50/80 rounded-[5px] p-3.5 border border-slate-200/70 mb-5 space-y-2 text-xs font-sans">
           <div className="flex items-start justify-between gap-2">
             <span className="font-bold text-[var(--color-primary)] shrink-0">What:</span>
             <span className="text-slate-600 text-right">{project.what}</span>
@@ -103,7 +103,7 @@ export default function FeatureExCard({ project }: FeatureExCardProps) {
             {project.media.map((tag) => (
               <span
                 key={tag}
-                className="font-sans text-[10.5px] font-semibold bg-white border border-slate-200 text-slate-600 px-2.5 py-0.5 rounded-md shadow-2xs"
+                className="font-sans text-[10.5px] font-semibold bg-white border border-slate-200 text-slate-600 px-2.5 py-0.5 rounded-full"
               >
                 {tag}
               </span>
