@@ -15,7 +15,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "STEM & critical thinking",
     serves: "Youth & educators",
     media: ["6 Episodes", "PDF Book", "AI Animation"],
-    path: "/media#detropolis",
+    path: "/mediaLibrary#detropolis",
   },
   {
     id: "finding-myself",
@@ -27,7 +27,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "SEL & mental health",
     serves: "Middle & high school",
     media: ["PDF Book", "School Play", "Music EP", "Workbook"],
-    path: "/media#finding-myself",
+    path: "/mediaLibrary#finding-myself",
   },
   {
     id: "flow-room",
@@ -39,7 +39,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Storytelling & dialogue",
     serves: "Youth & community",
     media: ["EP 01 Pilot", "EP 02 Sonny", "Discussion Guide"],
-    path: "/media#the-flow-room",
+    path: "/mediaLibrary#the-flow-room",
   },
   {
     id: "foil-film",
@@ -51,7 +51,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Art + AI storytelling",
     serves: "Kids ages 7–11",
     media: ["Video Docs", "Brochure", "AI Clips"],
-    path: "/#community",
+    path: "/community",
   },
   {
     id: "decode-mask",
@@ -63,7 +63,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Identity & mental health",
     serves: "Teens & adults",
     media: ["2 Films", "Discussion Guide", "Art"],
-    path: "/media#decode-mask",
+    path: "/mediaLibrary#decode-mask",
   },
   {
     id: "the-way",
@@ -75,7 +75,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Resilience & hope",
     serves: "At-risk youth",
     media: ["Music Video", "Remix", "Mentoring Story"],
-    path: "/media#the-way",
+    path: "/mediaLibrary#the-way",
   },
   {
     id: "gamble-love",
@@ -87,7 +87,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Relationships & SEL",
     serves: "Adults & couples",
     media: ["PDF Workbook", "Original Song"],
-    path: "/media#gamble-love",
+    path: "/mediaLibrary#gamble-love",
   },
   {
     id: "lead",

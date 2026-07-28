@@ -25,9 +25,10 @@ const navItems = [
     ],
   },
   { label: "Programs", path: "/programs" },
-  { label: "Media Library", path: "/media" },
-  { label: "Community", path: "/#community" },
-  { label: "Partner With Us", path: "/#partner" },
+  { label: "Media Library", path: "/mediaLibrary" },
+  { label: "Community", path: "/community" },
+  { label: "Contact", path: "/Contact" },
+
 ];
 
 /* ──────────────────────────────────────────────
@@ -184,7 +185,9 @@ export default function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           {/* Desktop CTA — uses Button component */}
           <div className="hidden lg:block">
-            <Button variant="secondary" size="small">Partner With Us</Button>
+            <Link href="/Contact" className="no-underline">
+              <Button variant="secondary" size="small">Partner With Us</Button>
+            </Link>
           </div>
 
           {/* Mobile menu toggle */}
@@ -314,7 +317,9 @@ export default function Navbar() {
 
           {/* Mobile CTA */}
           <div className="mt-auto pt-[var(--space-lg)] pb-[var(--space-xl)] flex justify-center">
-            <Button variant="secondary" size="small">Partner With Us</Button>
+            <Link href="/Contact" className="no-underline">
+              <Button variant="secondary" size="small">Partner With Us</Button>
+            </Link>
           </div>
         </div>
       </div>

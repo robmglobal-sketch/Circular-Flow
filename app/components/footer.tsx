@@ -30,7 +30,7 @@ export default function Footer() {
               
               {/* Bio Paragraph */}
               <p className="font-sans text-white/70 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
-                A creative innovation studio built on connection — connecting people, generations, art forms, technology, education, and community impact.
+                A creative innovation studio built on connection connecting people, generations, art forms, technology, education, and community impact.
               </p>
             </div>
 
@@ -61,9 +61,10 @@ export default function Footer() {
                 {[
                   { label: "The Ecosystem", path: "/#ecosystem" },
                   { label: "Programs", path: "/programs" },
-                  { label: "Media Library", path: "/media" },
+                  { label: "Media Library", path: "/mediaLibrary" },
                   { label: "About Robert Mitchell Jr.", path: "/about" },
-                  { label: "Community Impact", path: "/#community" },
+                  { label: "Community Impact", path: "/community" },
+                  { label: "Contact Us", path: "/Contact" },
                   { label: "Innovation Studio", path: "/#innovation" },
                 ].map((item) => (
                   <li key={item.label}>
@@ -88,9 +89,9 @@ export default function Footer() {
                   { label: "LEAD", path: "/programs/lead", beta: true },
                   { label: "RIZE UP", path: "/programs/rize-up", beta: true },
                   { label: "The Flow Center", path: "/programs/the-flow-center", beta: true },
-                  { label: "The Flow Room", path: "/media#the-flow-room" },
-                  { label: "Foil to Film Workshop", path: "/#ecosystem" },
-                  { label: "Detropolis", path: "/#ecosystem" },
+                  { label: "The Flow Room", path: "/mediaLibrary#the-flow-room" },
+                  { label: "Foil to Film Workshop", path: "/community" },
+                  { label: "Detropolis", path: "/mediaLibrary#detropolis" },
                   { label: "Merch Store", path: "/programs", soon: true },
                   { label: "Scholarship", path: "/programs", soon: true },
                 ].map((item) => (
@@ -166,7 +167,7 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 mb-10 lg:mb-14">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] sm:text-xs text-white/50 border-t border-white/10 pt-8 font-sans">
           <p className="mb-0 text-center sm:text-left text-white/50">
-            © {year} Circular Flow Productions LLC — Robert Mitchell Jr., MSW, LCSW. All rights reserved.
+            © {year} Circular Flow Productions LLC Robert Mitchell Jr., MSW, LCSW. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6">
             <span className="text-white/50">

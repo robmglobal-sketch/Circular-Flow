@@ -25,7 +25,7 @@ const OPTIONS: OptionItem[] = [
   { 
     icon: GraduationCap, 
     label: "Bring a Workshop to Your School", 
-    desc: "Foil to Film, Photography 101, T-Shirt Design — transformative hands-on experiences for K–12." 
+    desc: "Foil to Film, Photography 101, T-Shirt Design transformative hands-on experiences for K–12." 
   },
   { 
     icon: Handshake, 
@@ -103,7 +103,7 @@ export default function PartnerSection() {
             </h2>
 
             <p className="font-sans text-base sm:text-lg !text-black font-light leading-relaxed mb-8">
-              Whether you're a school principal, community organization, educator, or creative collaborator — there's a place for you in the Circular Flow ecosystem.
+              Whether you're a school principal, community organization, educator, or creative collaborator, there's a place for you in the Circular Flow ecosystem.
             </p>
 
             {/* Partnership Options Cards */}
@@ -114,9 +114,9 @@ export default function PartnerSection() {
                 return (
                   <div 
                     key={item.label} 
-                    className="flex items-start gap-4 p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200/80 rounded-[14px] hover:border-[#18A0A8]/50 hover:bg-white hover:-translate-y-0.5 shadow-xs transition-all duration-300 group"
+                    className="flex items-start gap-4 p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200/80 rounded-[10px] hover:border-[#18A0A8]/50 hover:bg-white hover:-translate-y-0.5 shadow-xs transition-all duration-300 group"
                   >
-                    <div className="w-11 h-11 rounded-[8px] bg-[var(--color-secondary)]/12 border border-[var(--color-secondary)]/25 flex items-center justify-center text-[var(--color-secondary-dark)] shrink-0 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-11 h-11 rounded-[10px] bg-[var(--color-secondary)]/12 border border-[var(--color-secondary)]/25 flex items-center justify-center text-[var(--color-secondary-dark)] shrink-0 group-hover:scale-105 transition-transform duration-300">
                       <IconComp size={22} weight="bold" />
                     </div>
                     <div>
@@ -136,7 +136,7 @@ export default function PartnerSection() {
 
           {/* ══ Right Column: Send A Message Form ══ */}
           <div className="lg:col-span-6 w-full">
-            <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[18px] p-6 sm:p-9 shadow-sm relative overflow-hidden">
+            <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[10px] p-6 sm:p-9 shadow-sm relative overflow-hidden">
               <div className="flex items-center gap-2 mb-6">
                 <ChatText size={20} weight="bold" className="text-[var(--color-secondary)]" />
                 <h3 className="font-heading text-sm font-extrabold tracking-wider text-[#18A0A8] uppercase mb-0">
@@ -259,13 +259,13 @@ export default function PartnerSection() {
 
                   {/* Submit Button */}
                   <div className="pt-2">
-                    <button
+                    <Button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-[10px] bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-dark)] text-white font-heading font-extrabold text-base tracking-wide flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer border-none"
+                      variant="primary"
+                      className="w-full justify-center text-base"
                     >
                       <span>Submit Inquiry</span>
-                      <PaperPlaneRight size={18} weight="bold" />
-                    </button>
+                    </Button>
                   </div>
                 </form>
               )}

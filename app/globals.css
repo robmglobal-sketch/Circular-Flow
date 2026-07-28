@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap');
 @import "tailwindcss";
 
 /* ============================================
@@ -87,7 +88,7 @@
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-dm-sans);
-  --font-accent: var(--font-lugrasimo);
+  --font-accent: "Edu VIC WA NT Hand", cursive;
 }
 
 /* ============================================
@@ -162,10 +163,10 @@ h6 {
   margin-bottom: var(--space-xs);
 }
 
-/* Italic / accent heading style — Lugrasimo */
+/* Italic / accent heading style */
 .heading-accent,
 .heading-italic {
-  font-family: var(--font-lugrasimo), "Lugrasimo", cursive;
+  font-family: "Edu VIC WA NT Hand", cursive;
   font-style: italic;
   font-weight: 400;
 }

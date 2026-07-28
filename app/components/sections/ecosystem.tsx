@@ -17,13 +17,13 @@ interface NodeItem {
 }
 
 const NODES: NodeItem[] = [
-  { id: "detropolis", label: "DETROPOLIS", tag: "Film Series", angle: 0, color: "#18A0A8", description: "AI-animated sci-fi series — 6 episodes, Detroit-inspired storytelling", path: "/media#detropolis" },
-  { id: "finding-myself", label: "FINDING MYSELF", tag: "Book · Play · Music", angle: 30, color: "#18A0A8", description: "YA novel, school play, full EP — SEL themes for youth", path: "/media#finding-myself" },
-  { id: "flow-room", label: "THE FLOW ROOM", tag: "Animated Talk Show", angle: 60, color: "#18A0A8", description: "Animated talk show series — youth voices, music, AI animation & real conversation", path: "/media#the-flow-room" },
-  { id: "foil-film", label: "FOIL TO FILM", tag: "Workshop", angle: 90, color: "#18A0A8", description: "Flagship hands-on creativity workshop — kids ages 7–11, AI storytelling", path: "/#community" },
-  { id: "decode-mask", label: "DECODE THE MASK", tag: "Film Series", angle: 120, color: "#18A0A8", description: "Social issue video series — identity, mental health, community reflection", path: "/media#decode-mask" },
-  { id: "the-way", label: "THE WAY", tag: "Music · Mentoring", angle: 150, color: "#18A0A8", description: "Music project and mentoring story — youth & foster care connection", path: "/media#the-way" },
-  { id: "gamble-love", label: "GAMBLE OF LOVE", tag: "Book · Music", angle: 180, color: "#18A0A8", description: "Relationship workbook and original song — social-emotional learning", path: "/media#gamble-love" },
+  { id: "detropolis", label: "DETROPOLIS", tag: "Film Series", angle: 0, color: "#18A0A8", description: "AI-animated sci-fi series — 6 episodes, Detroit-inspired storytelling", path: "/mediaLibrary#detropolis" },
+  { id: "finding-myself", label: "FINDING MYSELF", tag: "Book · Play · Music", angle: 30, color: "#18A0A8", description: "YA novel, school play, full EP — SEL themes for youth", path: "/mediaLibrary#finding-myself" },
+  { id: "flow-room", label: "THE FLOW ROOM", tag: "Animated Talk Show", angle: 60, color: "#18A0A8", description: "Animated talk show series — youth voices, music, AI animation & real conversation", path: "/mediaLibrary#the-flow-room" },
+  { id: "foil-film", label: "FOIL TO FILM", tag: "Workshop", angle: 90, color: "#18A0A8", description: "Flagship hands-on creativity workshop — kids ages 7–11, AI storytelling", path: "/community" },
+  { id: "decode-mask", label: "DECODE THE MASK", tag: "Film Series", angle: 120, color: "#18A0A8", description: "Social issue video series — identity, mental health, community reflection", path: "/mediaLibrary#decode-mask" },
+  { id: "the-way", label: "THE WAY", tag: "Music · Mentoring", angle: 150, color: "#18A0A8", description: "Music project and mentoring story — youth & foster care connection", path: "/mediaLibrary#the-way" },
+  { id: "gamble-love", label: "GAMBLE OF LOVE", tag: "Book · Music", angle: 180, color: "#18A0A8", description: "Relationship workbook and original song — social-emotional learning", path: "/mediaLibrary#gamble-love" },
   { id: "lead", label: "LEAD", tag: "Program · Beta", angle: 210, color: "#2E7D32", description: "Leadership, Expression, Arts & Diversity — structured youth program", path: "/programs/lead" },
   { id: "rize-up", label: "RIZE UP", tag: "Program · Beta", angle: 240, color: "#2E7D32", description: "Youth empowerment and personal development curriculum", path: "/programs/rize-up" },
   { id: "the-flow-center", label: "THE FLOW CENTER", tag: "Program · Beta", angle: 270, color: "#2E7D32", description: "Therapeutic online course — guided flow practice for emotional wellness & growth", path: "/programs/the-flow-center" },
