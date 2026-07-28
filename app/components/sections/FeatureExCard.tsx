@@ -68,7 +68,7 @@ export default function FeatureExCard({ project }: FeatureExCardProps) {
         </div>
 
         {/* Title & Type */}
-        <h3 className="font-heading text-xl font-extrabold !text-[var(--color-primary)] mb-1 tracking-tight group-hover:text-[var(--color-secondary-dark)] transition-colors leading-snug">
+        <h3 className="font-heading text-xl font-extrabold !text-black mb-1 tracking-tight group-hover:text-[var(--color-secondary-dark)] transition-colors leading-snug">
           {project.title}
         </h3>
         
@@ -77,7 +77,7 @@ export default function FeatureExCard({ project }: FeatureExCardProps) {
         </div>
 
         {/* Description */}
-        <p className="font-sans text-xs sm:text-sm text-[var(--color-text-secondary)] leading-relaxed mb-6">
+        <p className="font-sans text-xs sm:text-sm !text-black font-light leading-relaxed mb-6">
           {project.description}
         </p>
 

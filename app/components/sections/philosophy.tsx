@@ -29,6 +29,9 @@ const PILLARS = [
 export default function PhilosophySection() {
   return (
     <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-[#163A5F] text-white relative overflow-hidden">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern-dark" />
+
       {/* Background ambient radial glows & graphic elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/15 via-[var(--color-tertiary)]/5 to-transparent blur-3xl pointer-events-none -z-0" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl pointer-events-none -z-0" />
@@ -38,9 +41,27 @@ export default function PhilosophySection() {
         
         {/* Section Header Badge */}
         <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-tertiary)]/15 border border-[var(--color-tertiary)]/40 text-[var(--color-tertiary)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-5">
-            <Sparkle size={16} weight="fill" className="text-[var(--color-tertiary)]" />
-            <span>The Flow · Philosophy</span>
+          <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
+            {/* Paintbrush stroke background SVG */}
+            <svg
+              className="absolute inset-0 w-full h-full text-[var(--color-tertiary)]/25 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
+              viewBox="0 0 220 44"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="currentColor"
+                d="M12 8 C40 3, 110 2, 208 6 C218 10, 216 28, 206 34 C160 39, 70 41, 10 37 C1 32, 2 14, 12 8 Z"
+              />
+              <path
+                fill="currentColor"
+                opacity="0.5"
+                d="M6 14 C30 9, 130 5, 214 10 C222 18, 212 32, 198 36 C140 40, 50 38, 14 32 C4 26, 0 18, 6 14 Z"
+              />
+            </svg>
+            <Sparkle size={18} weight="fill" className="relative z-10 text-[var(--color-tertiary)]" />
+            <span className="relative z-10 font-heading text-xs sm:text-sm font-extrabold tracking-wider uppercase text-white">
+              The Flow · Philosophy
+            </span>
           </div>
 
           <h2 className="font-heading text-3.5xl sm:text-5xl lg:text-6xl font-bold !text-white tracking-tight leading-[1.15] max-w-4xl">
@@ -74,7 +95,7 @@ export default function PhilosophySection() {
                 “The Flow is the belief that growth happens through connection. Every person, idea, discipline, generation, and technology influences the others. When those relationships become stronger, individuals and communities become stronger.”
               </blockquote>
 
-              <p className="font-sans text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl mb-0">
+              <p className="font-sans text-base sm:text-lg text-[#000000] font-light leading-relaxed max-w-2xl mb-0">
                 I design interconnected creative ecosystems that bring together diverse people, disciplines, art forms, and technologies to inspire learning, reflection, collaboration, and positive action.
               </p>
             </div>

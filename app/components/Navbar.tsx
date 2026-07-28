@@ -75,8 +75,9 @@ export default function Navbar() {
 
   /* ── Active check ── */
   const isActive = (path: string) => {
+    if (path.includes("#")) return false;
     if (path === "/") return pathname === "/";
-    return pathname.startsWith(path.split("#")[0]);
+    return pathname.startsWith(path);
   };
 
   return (
@@ -125,10 +126,7 @@ export default function Navbar() {
                   flex items-center gap-1 no-underline
                   font-sans text-[0.85rem] font-medium
                   transition-colors duration-300 ease-[var(--ease-out-expo)]
-                  ${isActive(item.path)
-                    ? "text-[var(--color-secondary)]"
-                    : "text-[#163A5F] hover:text-[var(--color-secondary)]"
-                  }
+                  !text-black ${isActive(item.path) ? "font-bold" : "font-medium hover:opacity-70"}
                 `}
               >
                 {item.label}
@@ -167,7 +165,7 @@ export default function Navbar() {
                       href={sub.path}
                       className={`
                         block px-5 py-3.5
-                        font-sans text-sm text-[var(--color-text-secondary)]
+                        font-sans text-sm !text-black
                         hover:text-[var(--color-secondary)] hover:bg-[var(--color-surface-alt)]
                         transition-colors duration-200
                         ${idx < item.dropdown!.length - 1 ? "border-b border-[var(--color-border)]" : ""}
@@ -261,10 +259,7 @@ export default function Navbar() {
                       font-sans text-base font-medium
                       py-4
                       transition-colors duration-300
-                      ${isActive(item.path)
-                        ? "text-[var(--color-secondary)]"
-                        : "text-[#163A5F] hover:text-[var(--color-secondary)]"
-                      }
+                      !text-black ${isActive(item.path) ? "font-bold" : "font-medium"}
                     `}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
@@ -303,7 +298,7 @@ export default function Navbar() {
                         href={sub.path}
                         className="
                           block py-3
-                          font-sans text-sm text-[var(--color-text-muted)]
+                          font-sans text-sm !text-black
                           hover:text-[var(--color-secondary)]
                           transition-colors duration-200
                         "

@@ -1,23 +1,23 @@
 {
   "app/components/Button.tsx": {
-    "mtime": 1785060823.745022,
-    "ast_hash": "9f1bc1821060908afc21b5583f3c13bc",
-    "semantic_hash": "9f1bc1821060908afc21b5583f3c13bc"
+    "mtime": 1785066761.1139486,
+    "ast_hash": "6fb2dc4d46deeb66d938277d4dc51601",
+    "semantic_hash": "6fb2dc4d46deeb66d938277d4dc51601"
   },
   "app/components/Navbar.tsx": {
-    "mtime": 1785065121.6175826,
-    "ast_hash": "44e03a116917dde2d0ccf8339e4f9306",
-    "semantic_hash": "44e03a116917dde2d0ccf8339e4f9306"
+    "mtime": 1785183977.273067,
+    "ast_hash": "128bb761538b55a1da0d7252a4fbe821",
+    "semantic_hash": "128bb761538b55a1da0d7252a4fbe821"
   },
   "app/layout.tsx": {
-    "mtime": 1785062128.655745,
-    "ast_hash": "f93381a3c6f5c6087d2a79f9c00d4b69",
-    "semantic_hash": "f93381a3c6f5c6087d2a79f9c00d4b69"
+    "mtime": 1785083722.5676918,
+    "ast_hash": "5fc276fd39dc4f33525be417dcbd8161",
+    "semantic_hash": "5fc276fd39dc4f33525be417dcbd8161"
   },
   "app/page.tsx": {
-    "mtime": 1785060920.039255,
-    "ast_hash": "748f1116adeebf7c512e9f4656d8a0af",
-    "semantic_hash": "748f1116adeebf7c512e9f4656d8a0af"
+    "mtime": 1785092632.1998584,
+    "ast_hash": "59f435f7c0cae18f582590be3206ab1e",
+    "semantic_hash": "59f435f7c0cae18f582590be3206ab1e"
   },
   "eslint.config.mjs": {
     "mtime": 1785011604.4511187,
@@ -63,5 +63,110 @@
     "mtime": 1785059749.0928552,
     "ast_hash": "e7c8f7608e36ecc4d715c6854a56b46e",
     "semantic_hash": "e7c8f7608e36ecc4d715c6854a56b46e"
+  },
+  "app/components/footer.tsx": {
+    "mtime": 1785100848.89767,
+    "ast_hash": "f1cb5a12afd926e0c303de0a29374b49",
+    "semantic_hash": "f1cb5a12afd926e0c303de0a29374b49"
+  },
+  "app/components/sections/FeatureExCard.tsx": {
+    "mtime": 1785100840.6755755,
+    "ast_hash": "58100097bd9a2ac0c936da869ec728fe",
+    "semantic_hash": "58100097bd9a2ac0c936da869ec728fe"
+  },
+  "app/components/sections/ecosystem.tsx": {
+    "mtime": 1785179933.7826703,
+    "ast_hash": "b297a2b3981722299dce4cf2dba2503c",
+    "semantic_hash": "b297a2b3981722299dce4cf2dba2503c"
+  },
+  "app/components/sections/featuredex.tsx": {
+    "mtime": 1785183631.1026692,
+    "ast_hash": "372f6ef1a3285d4e418592b91ec692ce",
+    "semantic_hash": "372f6ef1a3285d4e418592b91ec692ce"
+  },
+  "app/components/sections/hero.tsx": {
+    "mtime": 1785183725.2475984,
+    "ast_hash": "5ad4b9e6d14babf68ca1ab928ebf238a",
+    "semantic_hash": "5ad4b9e6d14babf68ca1ab928ebf238a"
+  },
+  "app/components/sections/origin.tsx": {
+    "mtime": 1785100809.6232595,
+    "ast_hash": "19d47d3cfb027973598098fb64025517",
+    "semantic_hash": "19d47d3cfb027973598098fb64025517"
+  },
+  "app/components/sections/philosophy.tsx": {
+    "mtime": 1785100800.4807277,
+    "ast_hash": "3406ba5533a44970e430d7f54a2b40c8",
+    "semantic_hash": "3406ba5533a44970e430d7f54a2b40c8"
+  },
+  "public/featureExIcon/decode-mask.png": {
+    "mtime": 1785094888.995958,
+    "ast_hash": "2f57976d8f96b45f342a08bcb10ee36e",
+    "semantic_hash": "2f57976d8f96b45f342a08bcb10ee36e"
+  },
+  "public/featureExIcon/detropolis.png": {
+    "mtime": 1785094476.8451273,
+    "ast_hash": "f005d2d668574977ec11e11112c55ee7",
+    "semantic_hash": "f005d2d668574977ec11e11112c55ee7"
+  },
+  "public/featureExIcon/finding-myself.png": {
+    "mtime": 1785094574.390689,
+    "ast_hash": "c89737664f237339cf8edc897aab36b3",
+    "semantic_hash": "c89737664f237339cf8edc897aab36b3"
+  },
+  "public/featureExIcon/flow-room.png": {
+    "mtime": 1785094693.3734665,
+    "ast_hash": "924fdde43d4877aab47a519b61886c2d",
+    "semantic_hash": "924fdde43d4877aab47a519b61886c2d"
+  },
+  "public/featureExIcon/foil-film.png": {
+    "mtime": 1785094794.3576298,
+    "ast_hash": "10fa2399878fb3e20a5d335e45037ea3",
+    "semantic_hash": "10fa2399878fb3e20a5d335e45037ea3"
+  },
+  "public/featureExIcon/gamble-love.png": {
+    "mtime": 1785095222.9282844,
+    "ast_hash": "73c493671f937fc7112ab823cc9fcdac",
+    "semantic_hash": "73c493671f937fc7112ab823cc9fcdac"
+  },
+  "public/featureExIcon/lead.png": {
+    "mtime": 1785095429.4988647,
+    "ast_hash": "94b9b9ce0ad2a97f46315c8b5a7dcd99",
+    "semantic_hash": "94b9b9ce0ad2a97f46315c8b5a7dcd99"
+  },
+  "public/featureExIcon/rize-up.png": {
+    "mtime": 1785095545.8618016,
+    "ast_hash": "96c8f8addead5be58ddd6840ed68a9c3",
+    "semantic_hash": "96c8f8addead5be58ddd6840ed68a9c3"
+  },
+  "public/featureExIcon/sdd.png": {
+    "mtime": 1785095592.3777392,
+    "ast_hash": "5a20e1bb79fc530e8b0a462467dadac5",
+    "semantic_hash": "5a20e1bb79fc530e8b0a462467dadac5"
+  },
+  "public/featureExIcon/the-way.png": {
+    "mtime": 1785094987.6950474,
+    "ast_hash": "82bc28744c98b67e692e9e45b2e33b20",
+    "semantic_hash": "82bc28744c98b67e692e9e45b2e33b20"
+  },
+  "public/hero/1.jpg": {
+    "mtime": 1785071341.5680408,
+    "ast_hash": "28888110f93994b0769ff25836cf5809",
+    "semantic_hash": "28888110f93994b0769ff25836cf5809"
+  },
+  "public/hero/2.jpg": {
+    "mtime": 1785071341.5324047,
+    "ast_hash": "f4260ed6345ec5a074cc8c22f79210e1",
+    "semantic_hash": "f4260ed6345ec5a074cc8c22f79210e1"
+  },
+  "public/hero/3.jpg": {
+    "mtime": 1785071341.5570412,
+    "ast_hash": "4f8179508115a8e5759d02c3a27a8445",
+    "semantic_hash": "4f8179508115a8e5759d02c3a27a8445"
+  },
+  "public/hero/4.png": {
+    "mtime": 1785071341.5505323,
+    "ast_hash": "81c1615ac8926505056f7d49bd37cbc3",
+    "semantic_hash": "81c1615ac8926505056f7d49bd37cbc3"
   }
 }

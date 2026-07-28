@@ -132,7 +132,7 @@ const PROJECTS: ProjectItem[] = [
 
 export default function FeaturedExperiences() {
   return (
-    <section className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12 bg-slate-50/70 text-[var(--color-primary)] relative overflow-hidden border-t border-[var(--color-border)]">
+    <section className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12  text-[var(--color-primary)] relative overflow-hidden ">
       {/* Subtle background ambient gradients */}
       <div className="absolute top-0 right-1/3 w-[600px] h-[600px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
       <div className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
@@ -140,19 +140,37 @@ export default function FeaturedExperiences() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
-            <Sparkle size={16} weight="bold" className="text-[var(--color-secondary)]" />
-            <span>Featured Experiences</span>
+          <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
+            {/* Paintbrush stroke background SVG */}
+            <svg
+              className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
+              viewBox="0 0 220 44"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="currentColor"
+                d="M12 8 C40 3, 110 2, 208 6 C218 10, 216 28, 206 34 C160 39, 70 41, 10 37 C1 32, 2 14, 12 8 Z"
+              />
+              <path
+                fill="currentColor"
+                opacity="0.5"
+                d="M6 14 C30 9, 130 5, 214 10 C222 18, 212 32, 198 36 C140 40, 50 38, 14 32 C4 26, 0 18, 6 14 Z"
+              />
+            </svg>
+            <Sparkle size={18} weight="bold" className="relative z-10 text-[var(--color-secondary-dark)]" />
+            <span className="relative z-10 font-heading text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[var(--color-primary)]">
+              Featured Experiences
+            </span>
           </div>
 
-          <h2 className="font-heading text-3.5xl sm:text-5xl lg:text-6xl font-extrabold !text-[var(--color-primary)] tracking-tight leading-[1.15] max-w-4xl">
+          <h2 className="font-heading text-3.5xl sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.15] max-w-4xl">
             The Creative{" "}
             <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
               Portfolio
             </span>
           </h2>
           
-          <p className="font-sans text-base sm:text-lg text-[var(--color-text-secondary)] max-w-2xl mt-4 mb-0">
+          <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0">
             Each project is a living proof of what happens when storytelling, technology, and community come together.
           </p>
         </div>

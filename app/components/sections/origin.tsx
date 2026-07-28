@@ -80,13 +80,31 @@ export default function OriginSection() {
           {/* ══ Right Column: Editorial Origin Content ══ */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EAF7F8] border border-[var(--color-secondary)]/35 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wide uppercase w-fit mb-6">
-              <BookOpen size={16} weight="bold" />
-              <span>The Origin</span>
+            <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group w-fit">
+              {/* Paintbrush stroke background SVG */}
+              <svg
+                className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
+                viewBox="0 0 160 44"
+                preserveAspectRatio="none"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 8 C30 3, 80 2, 148 6 C158 10, 156 28, 146 34 C110 39, 50 41, 10 37 C1 32, 2 14, 12 8 Z"
+                />
+                <path
+                  fill="currentColor"
+                  opacity="0.5"
+                  d="M6 14 C20 9, 90 5, 154 10 C162 18, 152 32, 138 36 C100 40, 30 38, 14 32 C4 26, 0 18, 6 14 Z"
+                />
+              </svg>
+              <BookOpen size={18} weight="bold" className="relative z-10 text-[var(--color-secondary-dark)]" />
+              <span className="relative z-10 font-heading text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[var(--color-primary)]">
+                The Origin
+              </span>
             </div>
 
             {/* Heading */}
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] !text-[var(--color-primary)] leading-[1.18] mb-8 font-extrabold tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] !text-black leading-[1.18] mb-8 font-extrabold tracking-tight">
               A Child Who{" "}
               <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
                 Shaped Worlds
@@ -96,18 +114,18 @@ export default function OriginSection() {
 
             {/* Paragraphs */}
             <div className="space-y-5 font-sans text-base sm:text-lg text-[var(--color-text-secondary)] leading-relaxed">
-              <p className="mb-0 !text-[#4A6A8A]">
+              <p className="mb-0 !text-black font-light">
                 Growing up in Detroit during a time when family, community, culture, and collective responsibility still had a strong presence, a young Robert Mitchell Jr. would sit for hours sculpting aluminum foil into imaginary creatures and worlds and drawing the characters that would later populate his stories.
               </p>
               
-              <p className="mb-0 !text-[#4A6A8A]">
+              <p className="mb-0 !text-black font-light">
                 That child who gave life to inanimate objects never stopped. For nearly thirty years, he has worked as an educator, author, filmmaker, musician, illustrator, and licensed clinical social worker but the impulse remained the same:{" "}
                 <span className="!text-[var(--color-primary)] italic font-semibold">
                   to take raw material and transform it into something that helps people see themselves differently.
                 </span>
               </p>
               
-              <p className="font-sans !text-[#10787E] text-base sm:text-lg font-semibold leading-relaxed pt-2 mb-0">
+              <p className="font-sans !text-black font-light text-base sm:text-lg leading-relaxed pt-2 mb-0">
                 The same child who shaped aluminum foil into imaginary worlds now transforms stories, music, films, workshops, products, and programs into tools for learning, healing, innovation, and community growth.
               </p>
             </div>

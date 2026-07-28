@@ -34,8 +34,8 @@ const NODES: NodeItem[] = [
 function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
   const rad = ((angleDeg - 90) * Math.PI) / 180;
   return {
-    x: cx + r * Math.cos(rad),
-    y: cy + r * Math.sin(rad),
+    x: Number((cx + r * Math.cos(rad)).toFixed(4)),
+    y: Number((cy + r * Math.sin(rad)).toFixed(4)),
   };
 }
 
@@ -69,12 +69,30 @@ export default function EcosystemSection() {
         
         {/* ══ Header ══ */}
         <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/30 text-[var(--color-secondary-dark)] text-xs sm:text-sm font-bold tracking-wider uppercase mb-4">
-            <Atom size={18} weight="bold" className="text-[var(--color-secondary)]" />
-            <span>Interactive Ecosystem Map</span>
+          <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
+            {/* Paintbrush stroke background SVG */}
+            <svg
+              className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
+              viewBox="0 0 240 44"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="currentColor"
+                d="M12 8 C40 3, 110 2, 228 6 C238 10, 236 28, 226 34 C170 39, 70 41, 10 37 C1 32, 2 14, 12 8 Z"
+              />
+              <path
+                fill="currentColor"
+                opacity="0.5"
+                d="M6 14 C30 9, 140 5, 234 10 C242 18, 232 32, 218 36 C150 40, 50 38, 14 32 C4 26, 0 18, 6 14 Z"
+              />
+            </svg>
+            <Atom size={18} weight="bold" className="relative z-10 text-[var(--color-secondary-dark)]" />
+            <span className="relative z-10 font-heading text-xs sm:text-sm font-extrabold tracking-wider uppercase text-[var(--color-primary)]">
+              Interactive Ecosystem Map
+            </span>
           </div>
 
-          <h2 className="font-heading text-3.5xl sm:text-5xl lg:text-6xl font-extrabold !text-[var(--color-primary)] tracking-tight leading-[1.15] max-w-4xl">
+          <h2 className="font-heading text-3.5xl sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.15] max-w-4xl">
             The{" "}
             <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
               Circular Flow
@@ -82,7 +100,7 @@ export default function EcosystemSection() {
             Universe
           </h2>
           
-          <p className="font-sans text-base sm:text-lg text-[var(--color-text-secondary)] max-w-2xl mt-4 mb-0">
+          <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0">
             Every project, program, and creation flows from one singular mission. Explore how each branch connects to the whole.
           </p>
         </div>
@@ -257,11 +275,11 @@ export default function EcosystemSection() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-2xl sm:text-3xl font-extrabold !text-[var(--color-primary)] mb-4 tracking-tight">
+                  <h3 className="font-heading text-2xl sm:text-3xl font-extrabold !text-black mb-4 tracking-tight">
                     Interactive Project Navigator
                   </h3>
 
-                  <p className="font-sans text-[var(--color-text-secondary)] text-base leading-relaxed mb-8">
+                  <p className="font-sans !text-black font-light text-base leading-relaxed mb-8">
                     Hover over any node on the nexus orbital map to inspect its story, program status, and creative branch.
                   </p>
                 </div>

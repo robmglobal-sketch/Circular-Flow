@@ -17,14 +17,14 @@ export default function Hero() {
 
       {/* ── Top Header Section ── */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-12 lg:mb-16">
-        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold text-[var(--color-primary)] tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
+        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold !text-black tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
           Where Storytelling, Technology, Education, and Community{" "}
           <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
             Flow Together
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto mb-10 leading-relaxed font-sans">
+        <p className="text-lg md:text-xl !text-black font-light max-w-3xl mx-auto mb-10 leading-relaxed font-sans">
           Circular Flow creates books, music, films, workshops, and learning experiences
           that help people think deeply, create boldly, and reconnect with themselves and others.
         </p>
@@ -57,8 +57,8 @@ export default function Hero() {
                 priority
               />
               {/* Full dark image overlay + strong bottom gradient for text contrast */}
-              <div className="absolute inset-0 bg-[#061423]/45 transition-colors duration-300 group-hover:bg-[#061423]/35" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-95" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-75" />
               
               <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6 flex flex-col justify-end transform group-hover:-translate-y-1 transition-transform duration-500">
                 <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug tracking-tight font-heading">
@@ -95,8 +95,8 @@ export default function Hero() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Full dark image overlay + strong bottom gradient for text contrast */}
-              <div className="absolute inset-0 bg-[#061423]/45 transition-colors duration-300 group-hover:bg-[#061423]/35" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-95" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-75" />
               
               <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6 flex flex-col justify-end transform group-hover:-translate-y-1 transition-transform duration-500">
                 <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug tracking-tight font-heading">
@@ -136,8 +136,8 @@ export default function Hero() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Full dark image overlay + strong bottom gradient for text contrast */}
-              <div className="absolute inset-0 bg-[#061423]/45 transition-colors duration-300 group-hover:bg-[#061423]/35" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-95" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-75" />
               
               <div className="absolute inset-x-0 bottom-0 p-5 lg:p-6 flex flex-col justify-end transform group-hover:-translate-y-1 transition-transform duration-500">
                 <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug tracking-tight font-heading">
@@ -177,8 +177,8 @@ export default function Hero() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Full dark image overlay + strong bottom gradient for text contrast */}
-              <div className="absolute inset-0 bg-[#061423]/45 transition-colors duration-300 group-hover:bg-[#061423]/35" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-95" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/75 to-transparent opacity-75" />
               
               <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col justify-end transform group-hover:-translate-y-1 transition-transform duration-500">
                 <div className="text-xs sm:text-sm font-semibold !text-white mb-1 leading-snug tracking-tight font-heading">

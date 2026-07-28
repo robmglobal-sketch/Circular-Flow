@@ -133,12 +133,12 @@
 
 .primary {
   background-color: transparent;
-  color: var(--color-primary);
+  color: white;
 }
 
 .primary .buttonBg {
-  border-color: var(--color-tertiary);
-  background-color: var(--color-tertiary);
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
 }
 
 .primary .layer1 {
@@ -146,11 +146,11 @@
 }
 
 .primary .layer2 {
-  background-color: var(--color-secondary);
+  background-color: var(--color-tertiary);
 }
 
 .primary .layer3 {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-secondary);
 }
 
 /* ============================================
