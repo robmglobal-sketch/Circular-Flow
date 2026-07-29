@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Star, CaretLeft, CaretRight, Quotes } from "@phosphor-icons/react";
+import { FadeUp } from "@/app/components/animations";
 
 interface TestimonialItem {
   quote: string;
@@ -92,7 +93,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* ══ Section Header ══ */}
-        <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-14 lg:mb-16">
           {/* Paintbrush Header Badge */}
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             <svg
@@ -126,16 +127,17 @@ export default function TestimonialsSection() {
           <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0 leading-relaxed">
             Real stories from educators, partners, and community leaders who have experienced Circular Flow programs firsthand.
           </p>
-        </div>
+        </FadeUp>
 
         {/* ══ Interactive Carousel Section ══ */}
-        <div 
-          className="relative max-w-4xl mx-auto"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
+        <FadeUp delay={0.25}>
+          <div 
+            className="relative max-w-4xl mx-auto"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
           {/* Card Viewport Container */}
           <div className="overflow-hidden p-2">
             <div 
@@ -216,8 +218,8 @@ export default function TestimonialsSection() {
               <CaretRight size={20} weight="bold" />
             </button>
           </div>
-
         </div>
+      </FadeUp>
 
       </div>
     </section>

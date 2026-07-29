@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { BookOpen, Play, X } from "@phosphor-icons/react";
 import Button from "@/app/components/Button";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 const WORKSHOP_IMG = "https://media.base44.com/images/public/6a63c33c63a63db25193f4e5/9b9c41626_generated_23a687b9.png";
 // Placeholder high-res video URL; replace with your actual origin video file or link when ready
@@ -46,39 +47,49 @@ export default function OriginSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* ══ Left Column: Interactive Video Thumbnail / Player Overlay ══ */}
-          <div className="lg:col-span-6 relative">
+          <FadeUp delay={0.1} className="lg:col-span-6 relative">
             <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-[10px] overflow-hidden shadow-sm border border-[var(--color-primary)]/15 group bg-[#091b2e]">
-              {/* Cover Thumbnail Image (Loaded upfront instead of heavy video) */}
+              {/* Background Poster Image */}
               <img
                 src={WORKSHOP_IMG}
-                alt="A child shaping aluminum foil creatures — the origin of Circular Flow"
+                alt="Robert Mitchell Jr. Origin Story Video Thumbnail"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-[#091b2e]/45 transition-colors duration-300 group-hover:bg-[#091b2e]/30" />
               
-              {/* Interactive Play Button Trigger */}
-              <button
-                onClick={() => setIsPlaying(true)}
-                className="absolute inset-0 flex flex-col items-center justify-center cursor-pointer border-none bg-transparent w-full h-full p-0 focus:outline-none"
-                aria-label="Play Fullscreen Origin Video"
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center text-white group-hover:scale-110 sm:group-hover:scale-115 transition-all duration-300 shadow-md">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[var(--color-secondary)] text-white flex items-center justify-center shadow-sm">
-                    <Play size={28} weight="fill" className="ml-1 text-white" />
+              {/* Dark overlay gradient for cinematic contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#061423]/80 via-[#061423]/40 to-transparent" />
+
+              {/* Center Interactive Play Button Trigger */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button
+                  onClick={() => setIsPlaying(true)}
+                  aria-label="Play Robert Mitchell Jr. origin story video"
+                  className="relative group/btn w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[var(--color-secondary)]/90 text-white flex items-center justify-center shadow-lg hover:scale-110 hover:bg-[var(--color-secondary)] transition-all duration-300 cursor-pointer border-none"
+                >
+                  <div className="absolute inset-0 rounded-full bg-[var(--color-secondary)] opacity-50 animate-ping pointer-events-none" />
+                  <Play size={36} weight="fill" className="ml-1 transition-transform group-hover/btn:scale-110" />
+                </button>
+              </div>
+
+              {/* Bottom Caption Pill Overlay */}
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-[10px] bg-white/90 backdrop-blur-md border border-white/40 shadow-sm flex items-center justify-between">
+                <div>
+                  <div className="font-mono text-[10px] sm:text-xs text-[var(--color-secondary-dark)] font-extrabold uppercase tracking-widest">
+                    FOUNDER STORY · VIDEO
+                  </div>
+                  <div className="font-heading text-sm sm:text-base font-bold !text-black">
+                    From Aluminum Foil to Ecosystems
                   </div>
                 </div>
-                
-                {/* Floating Action Badge */}
-                <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 bg-[#0b1d30]/85 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white text-xs font-semibold uppercase tracking-wider shadow-sm">
-                  <Play size={14} weight="fill" className="text-[var(--color-secondary)]" />
-                  Watch Origin Video
+                <div className="px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-mono text-xs font-bold shrink-0 ml-3">
+                  WATCH 
                 </div>
-              </button>
+              </div>
             </div>
-          </div>
+          </FadeUp>
 
           {/* ══ Right Column: Editorial Origin Content ══ */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <FadeUp delay={0.25} className="lg:col-span-6 flex flex-col justify-center">
             {/* Pill Badge */}
             <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group w-fit">
               {/* Paintbrush stroke background SVG */}
@@ -138,14 +149,14 @@ export default function OriginSection() {
                 </Button>
               </Link>
             </div>
-          </div>
+          </FadeUp>
 
         </div>
 
         {/* ══ Bottom Stat Callouts Bar ══ */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 border-t border-[var(--color-primary)]/15 pt-14 lg:pt-16 mt-16 lg:mt-24">
+        <StaggerGrid className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 border-t border-[var(--color-primary)]/15 pt-14 lg:pt-16 mt-16 lg:mt-24">
           {STATS.map((s) => (
-            <div key={s.label} className="group">
+            <StaggerItem key={s.label} className="group">
               <div className="font-heading text-4xl sm:text-5xl lg:text-6xl !text-[var(--color-secondary)] font-extrabold leading-none mb-2.5 tracking-tight group-hover:scale-105 transition-transform duration-300 origin-left">
                 {s.num}
               </div>
@@ -158,9 +169,9 @@ export default function OriginSection() {
                   style={{ width: `${s.pct}%` }}
                 />
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
 
       {/* ══ Fullscreen Video Playback Modal (Loads video ONLY when triggered) ══ */}

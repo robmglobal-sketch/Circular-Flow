@@ -14,6 +14,7 @@ import {
   ChatText
 } from "@phosphor-icons/react";
 import Button from "@/app/components/Button";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 interface OptionItem {
   icon: React.ElementType;
@@ -70,7 +71,7 @@ export default function PartnerSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* ══ Left Column: Partnership Info & Options ══ */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <FadeUp delay={0.1} className="lg:col-span-6 flex flex-col justify-center">
             
             {/* Paintbrush Header Badge */}
             <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group w-fit">
@@ -107,12 +108,12 @@ export default function PartnerSection() {
             </p>
 
             {/* Partnership Options Cards */}
-            <div className="space-y-4">
+            <StaggerGrid className="space-y-4">
               {OPTIONS.map((item) => {
                 const IconComp = item.icon;
 
                 return (
-                  <div 
+                  <StaggerItem 
                     key={item.label} 
                     className="flex items-start gap-4 p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200/80 rounded-[10px] hover:border-[#18A0A8]/50 hover:bg-white hover:-translate-y-0.5 shadow-xs transition-all duration-300 group"
                   >
@@ -127,15 +128,15 @@ export default function PartnerSection() {
                         {item.desc}
                       </p>
                     </div>
-                  </div>
+                  </StaggerItem>
                 );
               })}
-            </div>
+            </StaggerGrid>
 
-          </div>
+          </FadeUp>
 
           {/* ══ Right Column: Send A Message Form ══ */}
-          <div className="lg:col-span-6 w-full">
+          <FadeUp delay={0.25} className="lg:col-span-6 w-full">
             <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[10px] p-6 sm:p-9 shadow-sm relative overflow-hidden">
               <div className="flex items-center gap-2 mb-6">
                 <ChatText size={20} weight="bold" className="text-[var(--color-secondary)]" />
@@ -270,7 +271,7 @@ export default function PartnerSection() {
                 </form>
               )}
             </div>
-          </div>
+          </FadeUp>
 
         </div>
       </div>

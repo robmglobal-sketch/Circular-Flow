@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/app/components/Button";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 export default function Hero() {
   return (
@@ -17,35 +18,41 @@ export default function Hero() {
 
       {/* ── Top Header Section ── */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-12 lg:mb-16">
-        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold !text-black tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
-          Where Storytelling, Technology, Education, and Community{" "}
-          <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
-            Flow Together
-          </span>
-        </h1>
+        <FadeUp delay={0.1}>
+          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold !text-black tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
+            Where Storytelling, Technology, Education, and Community{" "}
+            <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
+              Flow Together
+            </span>
+          </h1>
+        </FadeUp>
 
-        <p className="text-lg md:text-xl !text-black font-light max-w-3xl mx-auto mb-10 leading-relaxed font-sans">
-          Circular Flow creates books, music, films, workshops, and learning experiences
-          that help people think deeply, create boldly, and reconnect with themselves and others.
-        </p>
+        <FadeUp delay={0.25}>
+          <p className="text-lg md:text-xl !text-black font-light max-w-3xl mx-auto mb-10 leading-relaxed font-sans">
+            Circular Flow creates books, music, films, workshops, and learning experiences
+            that help people think deeply, create boldly, and reconnect with themselves and others.
+          </p>
+        </FadeUp>
 
         {/* Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          <Link href="/programs" className="no-underline">
-            <Button variant="secondary">Explore Our Programs</Button>
-          </Link>
-          <Link href="/#partner" className="no-underline">
-            <Button variant="primary">Book a Workshop</Button>
-          </Link>
-        </div>
+        <FadeUp delay={0.4}>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link href="/programs" className="no-underline">
+              <Button variant="secondary">Explore Our Programs</Button>
+            </Link>
+            <Link href="/#partner" className="no-underline">
+              <Button variant="primary">Book a Workshop</Button>
+            </Link>
+          </div>
+        </FadeUp>
       </div>
 
       {/* ── 5-Column Bento Grid Section (Arch & Staggered Structure) ── */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-5 items-start">
+        <StaggerGrid className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-5 items-start">
           
           {/* ══ Column 1 ══ */}
-          <div className="flex flex-col gap-5">
+          <StaggerItem className="flex flex-col gap-5">
             {/* Card 1 — Hero Image */}
             <div className="group relative h-[320px] sm:h-[340px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
@@ -85,10 +92,10 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* ══ Column 2 (Staggered slightly down on large screens) ══ */}
-          <div className="flex flex-col lg:pt-8">
+          <StaggerItem className="flex flex-col lg:pt-8">
             {/* Card 2 — Community Impact */}
             <div className="group relative h-[420px] sm:h-[460px] lg:h-[550px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
@@ -112,10 +119,10 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* ══ Column 3 (Center column, positioned lower to create an arch with breathing room below buttons) ══ */}
-          <div className="flex flex-col md:col-span-2 lg:col-span-1 lg:pt-28">
+          <StaggerItem className="flex flex-col md:col-span-2 lg:col-span-1 lg:pt-28">
             {/* Card 7 — Educational Philosophy */}
             <div className="group relative h-full min-h-[340px] lg:h-[430px] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-white/10">
               <Image src="/hero/LEARN.png" alt="Learn. Create. Lead." fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
@@ -131,10 +138,10 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* ══ Column 4 (Staggered slightly down to mirror Column 2) ══ */}
-          <div className="flex flex-col lg:pt-10">
+          <StaggerItem className="flex flex-col lg:pt-10">
             {/* Card 4 — Classroom Learning */}
             <div className="group relative h-[420px] sm:h-[460px] lg:h-[530px] rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-all duration-500 border border-[var(--color-border)]/50">
               <Image
@@ -158,10 +165,10 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* ══ Column 5 (Rightmost column) ══ */}
-          <div className="flex flex-col gap-5">
+          <StaggerItem className="flex flex-col gap-5">
             {/* Card 5 — Educational Resources */}
             <div className="group relative h-[270px] sm:h-[290px] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center shadow-sm hover:shadow-md transition-all duration-300 border border-[#236b56]/40 overflow-hidden">
               <Image src="/hero/Learning.png" alt="Learning Library" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
@@ -204,9 +211,9 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </div>
+          </StaggerItem>
 
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );

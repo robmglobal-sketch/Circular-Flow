@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Quotes, Sparkle, ArrowsMerge, UsersThree, Lightbulb, Compass, RocketLaunch } from "@phosphor-icons/react";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 const PILLARS = [
   {
@@ -40,7 +41,7 @@ export default function PhilosophySection() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* Section Header Badge */}
-        <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-16 lg:mb-20">
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             {/* Paintbrush stroke background SVG */}
             <svg
@@ -71,13 +72,13 @@ export default function PhilosophySection() {
             </span>{" "}
             Philosophy
           </h2>
-        </div>
+        </FadeUp>
 
         {/* ══ Asymmetric Creative Layout ══ */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Glassmorphic Spotlight Quote Card (7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[10px] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-md group">
+          <FadeUp delay={0.2} className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[10px] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-md group">
             {/* Giant decorative watermark quote icon */}
             <Quotes
               size={180}
@@ -116,7 +117,7 @@ export default function PhilosophySection() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeUp>
 
           {/* Right Column: 4 Interconnected Pillars Grid (5 Cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-4">
@@ -125,11 +126,11 @@ export default function PhilosophySection() {
               <span>Interconnected Ecosystem Pillars</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 flex-1">
+            <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 flex-1">
               {PILLARS.map((p, idx) => {
                 const IconComponent = p.icon;
                 return (
-                  <div
+                  <StaggerItem
                     key={p.title}
                     className="bg-white/[0.03] hover:bg-white/[0.07] backdrop-blur-md border border-white/10 hover:border-[var(--color-secondary)]/50 rounded-[10px] p-5 sm:p-6 transition-all duration-300 group flex items-start gap-4"
                   >
@@ -144,10 +145,10 @@ export default function PhilosophySection() {
                         {p.desc}
                       </p>
                     </div>
-                  </div>
+                  </StaggerItem>
                 );
               })}
-            </div>
+            </StaggerGrid>
           </div>
 
         </div>

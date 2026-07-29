@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Question, CaretDown } from "@phosphor-icons/react";
+import { FadeUp } from "@/app/components/animations";
 
 interface FaqItem {
   q: string;
@@ -50,7 +51,7 @@ export default function FaqSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* ══ Section Header ══ */}
-        <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-14 lg:mb-16">
           {/* Paintbrush Header Badge */}
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             <svg
@@ -84,10 +85,10 @@ export default function FaqSection() {
           <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0 leading-relaxed">
             Everything you need to know about Circular Flow, our creative programs, workshops, and community partnerships.
           </p>
-        </div>
+        </FadeUp>
 
         {/* ══ Main 2-Column Section Layout ══ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <FadeUp delay={0.25} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Workshop Featured Image */}
           <div className="lg:col-span-5 relative">
@@ -164,7 +165,7 @@ export default function FaqSection() {
             })}
           </div>
 
-        </div>
+        </FadeUp>
 
       </div>
     </section>

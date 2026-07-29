@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Atom, Sparkle, ArrowRight, Compass, Plant, Planet, Info } from "@phosphor-icons/react";
 import Button from "@/app/components/Button";
+import { FadeUp } from "@/app/components/animations";
 
 interface NodeItem {
   id: string;
@@ -68,7 +69,7 @@ export default function EcosystemSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* ══ Header ══ */}
-        <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-14 lg:mb-16">
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             {/* Paintbrush stroke background SVG */}
             <svg
@@ -103,10 +104,10 @@ export default function EcosystemSection() {
           <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0">
             Every project, program, and creation flows from one singular mission. Explore how each branch connects to the whole.
           </p>
-        </div>
+        </FadeUp>
 
         {/* ══ Main Interactive Grid ══ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <FadeUp delay={0.25} className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Left / Center: Interactive SVG Nexus */}
           <div className="lg:col-span-7 flex justify-center relative">
@@ -328,7 +329,7 @@ export default function EcosystemSection() {
 
           </div>
 
-        </div>
+        </FadeUp>
 
       </div>
     </section>

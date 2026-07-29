@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Lightbulb, 
   PenNib, 
@@ -12,6 +13,7 @@ import {
   ArrowRight,
   ArrowDown
 } from "@phosphor-icons/react";
+import { FadeUp } from "@/app/components/animations";
 
 interface StepItem {
   step: string;
@@ -81,8 +83,6 @@ const INNOVATION_STEPS: StepItem[] = [
   },
 ];
 
-import { motion, AnimatePresence } from "framer-motion";
-
 export default function InnovationSection() {
   const [activeStep, setActiveStep] = useState<number>(1);
 
@@ -95,7 +95,7 @@ export default function InnovationSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* ══ Section Header ══ */}
-        <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             <svg
               className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
@@ -128,10 +128,10 @@ export default function InnovationSection() {
           <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0 leading-relaxed">
             AI is not replacing the human creator. AI is part of a collaborative creative process — a tool that amplifies human vision.
           </p>
-        </div>
+        </FadeUp>
 
         {/* ══ Framer Motion Accordion Layout ══ */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5 h-auto lg:h-[500px] w-full">
+        <FadeUp delay={0.25} className="flex flex-col lg:flex-row gap-4 lg:gap-5 h-auto lg:h-[500px] w-full">
           {INNOVATION_STEPS.map((item) => {
             const IconComp = item.icon;
             const isActive = activeStep === item.stepNum;
@@ -219,7 +219,7 @@ export default function InnovationSection() {
               </motion.div>
             );
           })}
-        </div>
+        </FadeUp>
 
       </div>
     </section>

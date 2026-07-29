@@ -3,6 +3,7 @@
 import React from "react";
 import { Sparkle } from "@phosphor-icons/react";
 import FeatureExCard, { ProjectItem } from "./FeatureExCard";
+import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 const PROJECTS: ProjectItem[] = [
   {
@@ -139,7 +140,7 @@ export default function FeaturedExperiences() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-14 lg:mb-16">
+        <FadeUp delay={0.1} className="flex flex-col items-center text-center mb-14 lg:mb-16">
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             {/* Paintbrush stroke background SVG */}
             <svg
@@ -173,14 +174,16 @@ export default function FeaturedExperiences() {
           <p className="font-sans text-base sm:text-lg !text-black font-light max-w-2xl mt-4 mb-0">
             Each project is a living proof of what happens when storytelling, technology, and community come together.
           </p>
-        </div>
+        </FadeUp>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {PROJECTS.map((project) => (
-            <FeatureExCard key={project.id} project={project} />
+            <StaggerItem key={project.id}>
+              <FeatureExCard project={project} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );
