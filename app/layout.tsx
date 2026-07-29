@@ -22,8 +22,13 @@ const lugrasimo = Lugrasimo({
 });
 
 export const metadata: Metadata = {
-  title: "CircularFlow",
-  description: "CircularFlow - Sustainable circular economy solutions",
+  title: "Circular Flow",
+  description: "Where Storytelling, Technology, Education, and Community Flow Together",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
