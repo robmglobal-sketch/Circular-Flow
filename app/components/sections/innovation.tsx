@@ -81,8 +81,10 @@ const INNOVATION_STEPS: StepItem[] = [
   },
 ];
 
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function InnovationSection() {
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState<number>(1);
 
   return (
     <section id="innovation" className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white text-black relative overflow-hidden">
@@ -90,11 +92,10 @@ export default function InnovationSection() {
       <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
       <div className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
 
-      <div className="relative z-10 max-w-[1240px] mx-auto">
+      <div className="relative z-10 max-w-[1440px] mx-auto">
         
         {/* ══ Section Header ══ */}
-        <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
-          {/* Paintbrush Header Badge */}
+        <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group">
             <svg
               className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
@@ -129,116 +130,95 @@ export default function InnovationSection() {
           </p>
         </div>
 
-        {/* ══ Staggered Cards Layout ══ */}
-        <div className="flex flex-col space-y-10 lg:space-y-12 relative">
-
-          {INNOVATION_STEPS.map((item, idx) => {
+        {/* ══ Framer Motion Accordion Layout ══ */}
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5 h-auto lg:h-[500px] w-full">
+          {INNOVATION_STEPS.map((item) => {
             const IconComp = item.icon;
-            const isEven = idx % 2 === 0;
-            const isHovered = hoveredStep === item.stepNum;
-            const isNextHovered = hoveredStep === item.stepNum + 1;
+            const isActive = activeStep === item.stepNum;
 
             return (
-              <div key={item.step} className="relative">
-                
-                {/* Step Card Container */}
+              <motion.div
+                layout
+                key={item.step}
+                onClick={() => setActiveStep(item.stepNum)}
+                className={`
+                  relative cursor-pointer overflow-hidden rounded-[10px] 
+                  border transition-colors duration-300 ease-out
+                  flex flex-col lg:flex-row
+                  ${isActive 
+                    ? "border-[#18A0A8] shadow-md bg-emerald-50/20 flex-1 lg:flex-auto min-h-[300px] lg:min-h-full" 
+                    : "border-slate-200/80 shadow-xs hover:border-[#18A0A8]/60 bg-[#F8FAFC] h-[72px] lg:h-full lg:w-[100px] shrink-0"
+                  }
+                `}
+                style={{ flexBasis: isActive ? "auto" : undefined, flexGrow: isActive ? 1 : 0 }}
+                transition={{ type: "spring", stiffness: 400, damping: 40 }}
+              >
+                {/* Number / Tab Area */}
                 <div 
-                  className="flex flex-col lg:flex-row items-center w-full"
-                  onMouseEnter={() => setHoveredStep(item.stepNum)}
-                  onMouseLeave={() => setHoveredStep(null)}
+                  className={`
+                    w-full lg:w-[100px] lg:h-full shrink-0 flex flex-row lg:flex-col items-center lg:justify-between p-4 lg:py-8 lg:px-0
+                    border-b lg:border-b-0 lg:border-r transition-colors duration-300
+                    ${isActive ? "border-[#18A0A8]/20 bg-white/50" : "border-transparent bg-transparent"}
+                  `}
                 >
-                  {/* Card Box positioned alternating left / right */}
-                  <div 
-                    className={`
-                      w-full lg:w-[540px]
-                      ${isEven ? "lg:mr-auto" : "lg:ml-auto"}
-                      group relative bg-[#F8FAFC] rounded-[14px] p-6 sm:p-7
-                      border transition-all duration-300 ease-out
-                      flex items-start gap-4 sm:gap-5
-                      ${isHovered
-                        ? "border-[#18A0A8] shadow-md bg-emerald-50/20 -translate-y-1" 
-                        : "border-slate-200/80 shadow-xs hover:border-[#18A0A8]/60 hover:shadow-sm"
-                      }
-                    `}
-                  >
-                    {/* Vertical Pill Badge (Left) */}
-                    <div 
-                      className={`
-                        w-9 sm:w-10 rounded-full py-4 flex flex-col items-center justify-center shrink-0
-                        transition-all duration-300
-                        ${isHovered 
-                          ? "bg-[#18A0A8] text-white shadow-sm" 
-                          : "bg-[#163A5F] text-white group-hover:bg-[#18A0A8]"
-                        }
-                      `}
+                  <div className="flex items-center justify-center w-10 h-10 shrink-0">
+                    <span className={`font-mono text-xl lg:text-3xl font-extrabold transition-colors duration-300 ${isActive ? "text-[#18A0A8]" : "text-slate-300 group-hover:text-slate-400"}`}>
+                      {item.step}
+                    </span>
+                  </div>
+                  
+                  {/* Vertical title (desktop only) */}
+                  <div className="hidden lg:flex flex-1 items-center justify-center relative w-full h-full min-h-[150px]">
+                    <span 
+                      className={`font-mono text-sm font-extrabold uppercase tracking-widest whitespace-nowrap rotate-180 transition-colors duration-300 ${isActive ? "text-[var(--color-primary)]" : "text-slate-400"}`}
+                      style={{ writingMode: "vertical-rl" }}
                     >
-                      <span className="font-mono text-xs font-extrabold tracking-tight writing-mode-vertical uppercase">
-                        {item.step}
+                      {item.title}
+                    </span>
+                  </div>
+
+                  {/* Horizontal title (mobile only) */}
+                  {!isActive && (
+                    <div className="lg:hidden ml-4">
+                      <span className="font-heading text-sm font-extrabold uppercase tracking-widest text-slate-400">
+                        {item.title}
                       </span>
                     </div>
+                  )}
+                </div>
 
-                    {/* Card Content */}
-                    <div className="flex-1">
-                      {/* Header Row */}
-                      <div className="flex items-center justify-between gap-3 mb-2">
-                        <div className="flex items-center gap-2.5">
-                          <div 
-                            className={`
-                              w-8 h-8 rounded-[6px] flex items-center justify-center transition-colors duration-300
-                              ${isHovered 
-                                ? "bg-[#18A0A8]/15 text-[#18A0A8]" 
-                                : "bg-[#163A5F]/10 text-[#163A5F] group-hover:bg-[#18A0A8]/15 group-hover:text-[#18A0A8]"
-                              }
-                            `}
-                          >
-                            <IconComp size={18} weight="bold" />
-                          </div>
-                          <span className="font-mono text-xs font-bold tracking-wider text-[var(--color-secondary-dark)] uppercase">
-                            {item.label}
-                          </span>
+                {/* Expanded Content Area */}
+                <AnimatePresence mode="wait">
+                  {isActive && (
+                    <motion.div
+                      initial={{ opacity: 0, filter: "blur(4px)" }}
+                      animate={{ opacity: 1, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, filter: "blur(4px)" }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center h-full w-full min-w-[280px]"
+                    >
+                      <div className="flex items-center gap-3 mb-5 lg:mb-8">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-[10px] bg-[#18A0A8]/15 border border-[#18A0A8]/20 flex items-center justify-center text-[#18A0A8] shrink-0">
+                          <IconComp size={26} weight="bold" />
                         </div>
-
-                        {/* Step count badge */}
-                        <span className="font-mono text-[10px] font-semibold text-slate-400 bg-white px-2 py-0.5 rounded-full border border-slate-200">
-                          {item.stepNum} / {INNOVATION_STEPS.length}
+                        <span className="font-mono text-xs lg:text-sm font-bold tracking-widest text-[var(--color-secondary-dark)] uppercase">
+                          {item.label}
                         </span>
                       </div>
 
-                      {/* Title */}
-                      <h3 className="font-heading text-lg sm:text-xl font-extrabold !text-black mb-2 tracking-tight">
+                      <h3 className="font-heading text-2xl sm:text-3xl lg:text-4.5xl font-extrabold !text-black mb-4 tracking-tight leading-tight">
                         {item.title}
                       </h3>
 
-                      {/* Description */}
-                      <p className="font-sans text-xs sm:text-sm !text-black font-light leading-relaxed mb-0">
+                      <p className="font-sans text-sm sm:text-base lg:text-lg !text-black/80 font-light leading-relaxed max-w-lg mb-0">
                         {item.description}
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Simple Curved Connector Arrow to Next Step (Desktop) */}
-                {idx < INNOVATION_STEPS.length - 1 && (
-                  <div className="hidden lg:flex justify-center items-center my-2 py-1 pointer-events-none">
-                    <div 
-                      className={`
-                        flex items-center gap-2 font-mono text-xs font-semibold px-4 py-1.5 rounded-full border transition-all duration-300
-                        ${isHovered || isNextHovered
-                          ? "bg-[#18A0A8]/10 border-[#18A0A8] text-[#18A0A8] scale-105" 
-                          : "bg-slate-50 border-slate-200 text-slate-400"
-                        }
-                      `}
-                    >
-                      <span>Flow to Step {item.stepNum + 1}</span>
-                      <ArrowDown size={14} weight="bold" className={isHovered || isNextHovered ? "animate-bounce text-[#18A0A8]" : ""} />
-                    </div>
-                  </div>
-                )}
-
-              </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-
         </div>
 
       </div>

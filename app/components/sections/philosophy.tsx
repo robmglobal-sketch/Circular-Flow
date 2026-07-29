@@ -95,7 +95,7 @@ export default function PhilosophySection() {
                 “The Flow is the belief that growth happens through connection. Every person, idea, discipline, generation, and technology influences the others. When those relationships become stronger, individuals and communities become stronger.”
               </blockquote>
 
-              <p className="font-sans text-base sm:text-lg text-[#000000] font-light leading-relaxed max-w-2xl mb-0">
+              <p className="font-sans text-base sm:text-lg !text-[#1fbdc6] font-light leading-relaxed max-w-2xl mb-0">
                 I design interconnected creative ecosystems that bring together diverse people, disciplines, art forms, and technologies to inspire learning, reflection, collaboration, and positive action.
               </p>
             </div>

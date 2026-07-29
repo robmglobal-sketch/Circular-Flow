@@ -502,7 +502,7 @@ export default function AboutPage() {
                   </span>
                 </div>
 
-                <p className="relative z-10 font-sans text-2xl sm:text-3.5xl text-white/95 font-light italic leading-snug max-w-3xl mx-auto mb-6">
+                <p className="relative z-10 font-sans text-2xl sm:text-3.5xl !text-[#1fbdc6] font-light italic leading-snug max-w-3xl mx-auto mb-6">
                   &ldquo;I design interconnected creative ecosystems that bring together diverse people, disciplines, art forms, and technologies to inspire learning, reflection, collaboration, and positive action.&rdquo;
                 </p>
 

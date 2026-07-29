@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
             >
               {TESTIMONIALS.map((t, idx) => (
                 <div key={idx} className="w-full shrink-0 px-2 sm:px-4">
-                  <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[16px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
+                  <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[10px] p-8 sm:p-12 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
                     {/* Watermark Quote Icon */}
                     <Quotes
                       size={140}

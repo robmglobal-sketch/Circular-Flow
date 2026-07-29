@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${inter.variable} ${lugrasimo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col pt-20 lg:pt-[5.5rem]">
+      <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
         <Footer />

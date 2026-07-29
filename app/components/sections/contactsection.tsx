@@ -120,7 +120,7 @@ export default function PartnerSection() {
                       <IconComp size={22} weight="bold" />
                     </div>
                     <div>
-                      <h4 className="font-heading text-sm sm:text-base font-extrabold !text-black mb-1 tracking-tight">
+                      <h4 className="font-heading text-sm sm:text-base font-normal !text-black mb-1 tracking-tight">
                         {item.label}
                       </h4>
                       <p className="font-sans text-xs sm:text-sm !text-black font-light leading-relaxed mb-0">

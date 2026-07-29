@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { List, X, CaretDown } from "@phosphor-icons/react";
+import { List, X, CaretDown, ArrowUp } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/app/components/Button";
 
@@ -74,6 +74,10 @@ export default function Navbar() {
     dropdownTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   /* ── Active check ── */
   const isActive = (path: string) => {
     if (path.includes("#")) return false;
@@ -86,7 +90,7 @@ export default function Navbar() {
       onMouseEnter={() => setIsNavHovered(true)}
       onMouseLeave={() => setIsNavHovered(false)}
       className={`
-        fixed top-0 left-0 right-0 z-50
+        relative z-50
         bg-[var(--color-surface)]
         transition-shadow duration-500 ease-[var(--ease-out-expo)]
         ${scrolled ? "shadow-sm" : ""}
@@ -322,6 +326,23 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* ══ Scroll to Top Button ══ */}
+      <AnimatePresence>
+        {scrolled && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 bg-[#18A0A8] text-white rounded-full shadow-lg hover:bg-[#127a80] hover:-translate-y-1 transition-all duration-300 cursor-pointer border-none focus:outline-none"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={24} weight="bold" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

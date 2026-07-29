@@ -133,7 +133,7 @@ export default function FaqSection() {
                     className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer bg-transparent border-none focus:outline-none"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-heading text-base sm:text-lg font-extrabold !text-black leading-snug tracking-tight">
+                    <span className="font-heading text-base sm:text-lg font-normal !text-black leading-snug tracking-tight">
                       {item.q}
                     </span>
                     

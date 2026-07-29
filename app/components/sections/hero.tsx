@@ -71,15 +71,19 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Card 3 — Statistics Card (Gradient) */}
-            <div className="h-[200px] sm:h-[220px] bg-gradient-to-br from-[var(--color-secondary)] via-[#168f96] to-[#0f6c73] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 -mr-6 -mt-6 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none" />
-              <div className="text-3xl sm:text-4xl font-extrabold font-heading !text-white tracking-tight mb-1">
-                12,500+
+            {/* Card 3 — Statistics Card */}
+            <div className="group relative h-[200px] sm:h-[220px] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-white/10">
+              <Image src="/hero/Learners%20Inspired.png" alt="Learners Inspired" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/60 to-transparent opacity-80" />
+              <div className="relative z-10 flex flex-col justify-center h-full">
+                <div className="text-3xl sm:text-4xl font-extrabold font-heading !text-white tracking-tight mb-1">
+                  12,500+
+                </div>
+                <p className="text-[8px] sm:text-[8px] font-semibold !text-white/90 font-sans uppercase tracking-wider mb-0">
+                  Learners Inspired
+                </p>
               </div>
-              <p className="text-[8px] sm:text-[8px] font-semibold !text-white/90 font-sans uppercase tracking-wider mb-0">
-                Learners Inspired
-              </p>
             </div>
           </div>
 
@@ -113,14 +117,19 @@ export default function Hero() {
           {/* ══ Column 3 (Center column, positioned lower to create an arch with breathing room below buttons) ══ */}
           <div className="flex flex-col md:col-span-2 lg:col-span-1 lg:pt-28">
             {/* Card 7 — Educational Philosophy */}
-            <div className="h-full min-h-[340px] lg:h-[430px] bg-gradient-to-br from-[#5B7696] via-[#435F7E] to-[#2D4766] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden border border-white/10">
-              <div className="text-xs sm:text-sm font-bold !text-white mb-2.5 tracking-tight leading-tight font-heading">
-                <span className="text-lg sm:text-xl font-extrabold uppercase tracking-wide mr-1">LEARN.</span> 
-                Create. Lead.
+            <div className="group relative h-full min-h-[340px] lg:h-[430px] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-white/10">
+              <Image src="/hero/LEARN.png" alt="Learn. Create. Lead." fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/60 to-transparent opacity-80" />
+              <div className="relative z-10 flex flex-col justify-center h-full">
+                <div className="text-xs sm:text-sm font-bold !text-white mb-2.5 tracking-tight leading-tight font-heading">
+                  <span className="text-lg sm:text-xl font-extrabold uppercase tracking-wide mr-1">LEARN.</span> 
+                  Create. Lead.
+                </div>
+                <p className="text-[8px] sm:text-[8px] !text-white/90 font-sans leading-[1.4] mb-0">
+                  Mission-based learning combining creative projects, real-world challenges, and portfolio building to inspire lasting leadership.
+                </p>
               </div>
-              <p className="text-[8px] sm:text-[8px] !text-white/90 font-sans leading-[1.4] mb-0">
-                Mission-based learning combining creative projects, real-world challenges, and portfolio building to inspire lasting leadership.
-              </p>
             </div>
           </div>
 
@@ -153,18 +162,23 @@ export default function Hero() {
 
           {/* ══ Column 5 (Rightmost column) ══ */}
           <div className="flex flex-col gap-5">
-            {/* Card 5 — Educational Resources (Dark Green Card) */}
-            <div className="h-[270px] sm:h-[290px] bg-gradient-to-br from-[#114B3B] via-[#0B3D2F] to-[#072B21] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center text-white shadow-sm hover:shadow-md transition-all duration-300 border border-[#236b56]/40 relative overflow-hidden">
-              <div className="inline-flex items-center gap-1.5 bg-emerald-400/15 border border-emerald-400/30 !text-white text-[10px] px-2.5 py-0.5 rounded-full font-semibold mb-2.5 uppercase tracking-wider w-fit">
-                Preview Available
+            {/* Card 5 — Educational Resources */}
+            <div className="group relative h-[270px] sm:h-[290px] rounded-[10px] p-6 lg:p-7 flex flex-col justify-center shadow-sm hover:shadow-md transition-all duration-300 border border-[#236b56]/40 overflow-hidden">
+              <Image src="/hero/Learning.png" alt="Learning Library" fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#061423]/20 transition-colors duration-300 group-hover:bg-[#061423]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#040e1a] via-[#040e1a]/60 to-transparent opacity-80" />
+              <div className="relative z-10 flex flex-col justify-center h-full">
+                <div className="inline-flex items-center gap-1.5 bg-emerald-400/15 border border-emerald-400/30 !text-white text-[10px] px-2.5 py-0.5 rounded-full font-semibold mb-2.5 uppercase tracking-wider w-fit">
+                  Preview Available
+                </div>
+                <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug font-heading">
+                  <span className="text-base sm:text-lg font-extrabold uppercase tracking-wide mr-1">Learning</span> 
+                  Library
+                </div>
+                <p className="text-[8px] sm:text-[8px] !text-white/90 font-sans leading-[1.4] mb-0">
+                  Student guides, facilitator resources, AI challenges, and journals for engaging learning.
+                </p>
               </div>
-              <div className="text-xs sm:text-sm font-semibold !text-white mb-1.5 leading-snug font-heading">
-                <span className="text-base sm:text-lg font-extrabold uppercase tracking-wide mr-1">Learning</span> 
-                Library
-              </div>
-              <p className="text-[8px] sm:text-[8px] !text-white/90 font-sans leading-[1.4] mb-0">
-                Student guides, facilitator resources, AI challenges, and journals for engaging learning.
-              </p>
             </div>
 
             {/* Card 6 — Innovation & Creativity */}
