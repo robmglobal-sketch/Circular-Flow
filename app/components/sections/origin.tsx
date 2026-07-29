@@ -4,11 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { BookOpen, Play, X } from "@phosphor-icons/react";
 import Button from "@/app/components/Button";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
+import { FadeUp, SlideIn, Parallax, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
-const WORKSHOP_IMG = "https://media.base44.com/images/public/6a63c33c63a63db25193f4e5/9b9c41626_generated_23a687b9.png";
-// Placeholder high-res video URL; replace with your actual origin video file or link when ready
-const VIDEO_URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
+const WORKSHOP_IMG = "https://img.youtube.com/vi/n3MFviXNalM/maxresdefault.jpg";
+const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/n3MFviXNalM?autoplay=1&rel=0";
 
 const STATS = [
   { num: "30+", label: "Years of Impact", pct: 100 },
@@ -39,15 +38,17 @@ export default function OriginSection() {
 
   return (
     <section className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white text-[var(--color-primary)] relative overflow-hidden ">
-      {/* Subtle ambient radial warmth for white background */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
+      {/* Subtle ambient radial warmth with parallax scroll depth */}
+      <Parallax speed={-40} className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl" />
+      </Parallax>
 
       <div className="relative z-10 max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* ══ Left Column: Interactive Video Thumbnail / Player Overlay ══ */}
-          <FadeUp delay={0.1} className="lg:col-span-6 relative">
+          {/* ══ Left Column: Interactive Video Thumbnail (Slides in from Left) ══ */}
+          <SlideIn direction="right" delay={0.1} className="lg:col-span-6 relative">
             <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-[10px] overflow-hidden shadow-sm border border-[var(--color-primary)]/15 group bg-[#091b2e]">
               {/* Background Poster Image */}
               <img
@@ -86,10 +87,10 @@ export default function OriginSection() {
                 </div>
               </div>
             </div>
-          </FadeUp>
+          </SlideIn>
 
-          {/* ══ Right Column: Editorial Origin Content ══ */}
-          <FadeUp delay={0.25} className="lg:col-span-6 flex flex-col justify-center">
+          {/* ══ Right Column: Editorial Origin Content (Slides in from Right) ══ */}
+          <SlideIn direction="left" delay={0.25} className="lg:col-span-6 flex flex-col justify-center">
             {/* Pill Badge */}
             <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group w-fit">
               {/* Paintbrush stroke background SVG */}
@@ -149,7 +150,7 @@ export default function OriginSection() {
                 </Button>
               </Link>
             </div>
-          </FadeUp>
+          </SlideIn>
 
         </div>
 
@@ -191,18 +192,16 @@ export default function OriginSection() {
 
           {/* Video Player Box */}
           <div
-            className="relative w-full max-w-[1200px] aspect-video bg-black rounded-[10px] overflow-hidden shadow-lg border border-white/20"
-            onClick={(e) => e.stopPropagation()} // Prevent accidental modal closing when clicking video controls
+            className="relative w-full max-w-[1200px] aspect-video bg-black rounded-[10px] overflow-hidden shadow-2xl border border-white/20"
+            onClick={(e) => e.stopPropagation()} // Prevent accidental modal closing when clicking video
           >
-            <video
-              src={VIDEO_URL}
-              controls
-              autoPlay
-              playsInline
-              className="w-full h-full object-contain bg-black"
-            >
-              Your browser does not support HTML5 video playback.
-            </video>
+            <iframe
+              src={YOUTUBE_EMBED_URL}
+              title="Robert Mitchell Jr. Origin Story"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full border-0"
+            />
           </div>
         </div>
       )}

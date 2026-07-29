@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Quotes, Sparkle, ArrowsMerge, UsersThree, Lightbulb, Compass, RocketLaunch } from "@phosphor-icons/react";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
+import { FadeUp, SlideIn, Parallax, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 const PILLARS = [
   {
@@ -33,10 +33,12 @@ export default function PhilosophySection() {
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern-dark" />
 
-      {/* Background ambient radial glows & graphic elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/15 via-[var(--color-tertiary)]/5 to-transparent blur-3xl pointer-events-none -z-0" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/10 to-transparent blur-3xl pointer-events-none -z-0" />
+      {/* Background ambient radial glows & graphic elements with parallax motion */}
+      <Parallax speed={-50} className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/15 via-[var(--color-tertiary)]/5 to-transparent blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/10 to-transparent blur-3xl" />
+      </Parallax>
 
       <div className="relative z-10 max-w-[1440px] mx-auto">
         
@@ -77,8 +79,8 @@ export default function PhilosophySection() {
         {/* ══ Asymmetric Creative Layout ══ */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
-          {/* Left Column: Glassmorphic Spotlight Quote Card (7 Cols) */}
-          <FadeUp delay={0.2} className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[10px] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-md group">
+          {/* Left Column: Glassmorphic Spotlight Quote Card (Slides in from Left) ══ */}
+          <SlideIn direction="right" delay={0.2} className="lg:col-span-7 flex flex-col justify-between bg-white/[0.04] backdrop-blur-xl border border-white/15 rounded-[10px] p-8 sm:p-10 lg:p-14 relative overflow-hidden shadow-md group">
             {/* Giant decorative watermark quote icon */}
             <Quotes
               size={180}
@@ -117,10 +119,10 @@ export default function PhilosophySection() {
                 </div>
               </div>
             </div>
-          </FadeUp>
+          </SlideIn>
 
-          {/* Right Column: 4 Interconnected Pillars Grid (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+          {/* Right Column: 4 Interconnected Pillars Grid (Slides in from Right) ══ */}
+          <SlideIn direction="left" delay={0.3} className="lg:col-span-5 flex flex-col justify-between gap-4">
             <div className="px-2 mb-2 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--color-secondary)] font-bold">
               <ArrowsMerge size={18} weight="bold" />
               <span>Interconnected Ecosystem Pillars</span>
@@ -149,7 +151,7 @@ export default function PhilosophySection() {
                 );
               })}
             </StaggerGrid>
-          </div>
+          </SlideIn>
 
         </div>
 

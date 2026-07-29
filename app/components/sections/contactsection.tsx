@@ -14,7 +14,7 @@ import {
   ChatText
 } from "@phosphor-icons/react";
 import Button from "@/app/components/Button";
-import { FadeUp, StaggerGrid, StaggerItem } from "@/app/components/animations";
+import { FadeUp, SlideIn, Parallax, StaggerGrid, StaggerItem } from "@/app/components/animations";
 
 interface OptionItem {
   icon: React.ElementType;
@@ -63,15 +63,17 @@ export default function PartnerSection() {
 
   return (
     <section id="partner" className="py-20 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white text-black relative overflow-hidden">
-      {/* Background ambient radial warmth */}
-      <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl pointer-events-none -z-0" />
+      {/* Background ambient radial warmth with parallax scroll depth */}
+      <Parallax speed={-40} className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-secondary)]/8 via-transparent to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/8 via-transparent to-transparent blur-3xl" />
+      </Parallax>
 
       <div className="relative z-10 max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* ══ Left Column: Partnership Info & Options ══ */}
-          <FadeUp delay={0.1} className="lg:col-span-6 flex flex-col justify-center">
+          {/* ══ Left Column: Partnership Info & Options (Slides in from Left) ══ */}
+          <SlideIn direction="right" delay={0.1} className="lg:col-span-6 flex flex-col justify-center">
             
             {/* Paintbrush Header Badge */}
             <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-5 select-none group w-fit">
@@ -133,10 +135,10 @@ export default function PartnerSection() {
               })}
             </StaggerGrid>
 
-          </FadeUp>
+          </SlideIn>
 
-          {/* ══ Right Column: Send A Message Form ══ */}
-          <FadeUp delay={0.25} className="lg:col-span-6 w-full">
+          {/* ══ Right Column: Send A Message Form (Slides in from Right) ══ */}
+          <SlideIn direction="left" delay={0.25} className="lg:col-span-6 w-full">
             <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-[10px] p-6 sm:p-9 shadow-sm relative overflow-hidden">
               <div className="flex items-center gap-2 mb-6">
                 <ChatText size={20} weight="bold" className="text-[var(--color-secondary)]" />
@@ -271,7 +273,7 @@ export default function PartnerSection() {
                 </form>
               )}
             </div>
-          </FadeUp>
+          </SlideIn>
 
         </div>
       </div>
