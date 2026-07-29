@@ -156,7 +156,6 @@ export default function Navbar() {
                   "
                   onMouseEnter={() => {
                     openDropdown(item.label);
-                    setHoveredNav(item.label);
                   }}
                   onMouseLeave={() => closeDropdown()}
                 >

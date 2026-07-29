@@ -17,9 +17,32 @@ import {
   HandsClapping,
   Quotes,
 } from "@phosphor-icons/react";
+import { GalleryLightbox, YTEmbed } from "@/components/cf/MediaEmbed";
+import type { GalleryTile } from "@/components/cf/MediaEmbed";
 
 const WORKSHOP_IMG =
   "https://media.base44.com/images/public/6a63c33c63a63db25193f4e5/9b9c41626_generated_23a687b9.png";
+
+// Community impact gallery tiles — all YouTube-backed for the lightbox
+const GALLERY_TILES: GalleryTile[] = [
+  { id: "back-school-1", ytId: "3tsGlBHLALk", alt: "Back to School Rally in Detroit", label: "Back to School Rally", sublabel: "Community Work" },
+  { id: "back-school-2", ytId: "SqpAAK_V2HU", alt: "Back to School Rally in Detroit Part 2", label: "Back to School Rally 2", sublabel: "Community Work" },
+  { id: "picnic", ytId: "U3TipF1s7Pc", alt: "Community Picnic co-founded by Robert Mitchell Jr.", label: "Community Picnic", sublabel: "Co-Founded — Still Running" },
+  { id: "graduation", ytId: "xd-6pvVxUok", alt: "Graduation speech to youth", label: "Graduation Speech to Kids", sublabel: "Community Work" },
+  { id: "supplies", ytId: "o0GpeIu_7g4", alt: "Showcase, school supplies and free haircuts event", label: "School Supplies & Free Haircuts", sublabel: "Community Giveaway" },
+  { id: "promo", ytId: "KNKKUZ54jdM", alt: "Community work promo video", label: "Community Work Promo", sublabel: "Short" },
+  { id: "videography", ytId: "u-5aABEDdPk", alt: "Mentoring youth in videography", label: "Youth Videography Mentoring", sublabel: "Creative Mentoring" },
+  { id: "dj-skills", ytId: "ANzUzDypb1g", alt: "Mentoring youth teaching DJ skills — precursor to The Flow Room", label: "DJ Skills Mentoring", sublabel: "Precursor to The Flow Room" },
+];
+
+// Scholarship short clips
+const SCHOLARSHIP_VIDEOS = [
+  { id: "RHU9XJ4c6vI", title: "CF Emerging Creative Scholarship", subtitle: "Short" },
+  { id: "ptqBTqmbVZ0", title: "CF Emerging Creative Scholarship 2", subtitle: "Short" },
+];
+
+// Merch store clip
+const MERCH_VIDEO_ID = "GE3NaPND4lc";
 
 const ITEMS = [
   {
@@ -289,6 +312,92 @@ export default function CommunityPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* ══ Community Impact Gallery ══ */}
+      <section className="py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-[#F8FAFC] border-t border-slate-200 relative z-10">
+        <div className="max-w-[1440px] mx-auto space-y-10">
+          <div className="space-y-3">
+            <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-[var(--color-secondary)]">
+              Community Impact Archive
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
+              30+ Years in the Community —{" "}
+              <span className="heading-italic font-normal text-[var(--color-secondary)]">
+                on Video
+              </span>
+            </h2>
+            <p className="font-sans text-lg text-slate-600 font-light max-w-2xl">
+              Click any tile to watch the moment. Every event documented, every youth served, every rally — now preserved here.
+            </p>
+          </div>
+          <GalleryLightbox tiles={GALLERY_TILES} accent="#18A0A8" />
+          <div className="pt-4">
+            <Link href="/mediaLibrary#community" className="no-underline inline-flex items-center gap-2 font-heading text-sm font-bold text-[var(--color-secondary)] hover:text-[var(--color-secondary-dark)] transition-colors uppercase tracking-wider">
+              View full community archive in Media Library
+              <ArrowRight size={16} weight="bold" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ CF Emerging Creative Scholarship ══ */}
+      <section className="py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-white border-t border-slate-200 relative z-10">
+        <div className="max-w-[1440px] mx-auto space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5 space-y-5">
+              <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-rose-500">
+                Scholarship
+              </span>
+              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
+                CF Emerging Creative{" "}
+                <span className="heading-italic font-normal text-rose-500">Scholarship</span>
+              </h2>
+              <p className="font-sans text-lg text-slate-700 font-light leading-relaxed">
+                The Circular Flow Emerging Creative Scholarship honors the founder's mother's legacy through wearable art and creative education — supporting the next generation of young artists.
+              </p>
+              <Link href="/Contact" className="no-underline inline-flex items-center gap-2 font-heading text-sm font-bold text-rose-500 hover:text-rose-600 transition-colors uppercase tracking-wider">
+                Learn more or apply
+                <ArrowRight size={16} weight="bold" />
+              </Link>
+            </div>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {SCHOLARSHIP_VIDEOS.map((v) => (
+                <div key={v.id} className="space-y-2">
+                  <YTEmbed videoId={v.id} title={v.title} />
+                  <p className="font-sans text-sm font-semibold text-slate-700">{v.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ Merch Store ══ */}
+      <section className="py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-slate-900 border-t border-slate-700 relative z-10">
+        <div className="max-w-[1440px] mx-auto space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <YTEmbed videoId={MERCH_VIDEO_ID} title="Circular Flow Merch Store" />
+            </div>
+            <div className="lg:col-span-5 space-y-5">
+              <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-[var(--color-secondary)]">
+                Merch Store
+              </span>
+              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Wear the{" "}
+                <span className="heading-italic font-normal text-[var(--color-secondary)]">Flow</span>
+              </h2>
+              <p className="font-sans text-lg text-slate-300 font-light leading-relaxed">
+                Support Circular Flow's mission through original merchandise — every purchase directly funds youth programs, workshops, and creative initiatives.
+              </p>
+              <Link href="/Contact" className="no-underline inline-flex items-center gap-2 font-heading text-sm font-bold text-[var(--color-secondary)] hover:text-white transition-colors uppercase tracking-wider">
+                Shop Circular Flow
+                <ArrowRight size={16} weight="bold" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

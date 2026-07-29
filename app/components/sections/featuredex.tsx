@@ -113,7 +113,7 @@ const PROJECTS: ProjectItem[] = [
     teaches: "Personal growth",
     serves: "Youth 14–21",
     media: ["Modules", "Videos", "Workbooks"],
-    path: "/programs/rize-up",
+    path: "/programs/rizeup",
   },
   {
     id: "sdd",

@@ -22,7 +22,7 @@ import {
 const PROGRAMS = [
   {
     name: "THE FLOW",
-    path: "/programs/the-flow",
+    path: "/programs/theflow",
     accent: "#18A0A8",
     accentLight: "rgba(24, 160, 168, 0.1)",
     tagline: "Therapeutic Program & Framework",
@@ -32,7 +32,7 @@ const PROGRAMS = [
   },
   {
     name: "THE FLOW CENTER",
-    path: "/programs/the-flow-center",
+    path: "/programs/flowcenter",
     accent: "#18A0A8",
     accentLight: "rgba(24, 160, 168, 0.1)",
     tagline: "Online Learning Platform",
@@ -52,7 +52,7 @@ const PROGRAMS = [
   },
   {
     name: "RIZE UP",
-    path: "/programs/rize-up",
+    path: "/programs/rizeup",
     accent: "#4CAF50",
     accentLight: "rgba(76, 175, 80, 0.12)",
     tagline: "Empowerment & Resilience",
@@ -62,7 +62,7 @@ const PROGRAMS = [
   },
   {
     name: "THE FLOW LABS",
-    path: "/programs/the-flow-labs",
+    path: "/programs/flowlabs",
     accent: "#D4A017",
     accentLight: "rgba(212, 160, 23, 0.12)",
     tagline: "Innovation & Applied Learning",
@@ -76,13 +76,13 @@ const ECOSYSTEM = [
   {
     name: "The Flow",
     desc: "Our therapeutic philosophy and personal development framework.",
-    path: "/programs/the-flow",
+    path: "/programs/theflow",
     color: "#18A0A8",
   },
   {
     name: "The Flow Center",
     desc: "The online platform where participants experience and learn The Flow digitally.",
-    path: "/programs/the-flow-center",
+    path: "/programs/flowcenter",
     color: "#18A0A8",
   },
   {
@@ -94,13 +94,13 @@ const ECOSYSTEM = [
   {
     name: "RIZE UP",
     desc: "Resilience, empowerment, and life skills for youth overcoming adversity.",
-    path: "/programs/rize-up",
+    path: "/programs/rizeup",
     color: "#4CAF50",
   },
   {
     name: "The Flow Labs",
     desc: "Hands-on innovation spaces where creativity, technology, design, entrepreneurship, and problem-solving transform ideas into real-world projects.",
-    path: "/programs/the-flow-labs",
+    path: "/programs/flowlabs",
     color: "#D4A017",
   },
 ];

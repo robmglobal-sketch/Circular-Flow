@@ -25,8 +25,8 @@ const NODES: NodeItem[] = [
   { id: "the-way", label: "THE WAY", tag: "Music · Mentoring", angle: 150, color: "#18A0A8", description: "Music project and mentoring story — youth & foster care connection", path: "/mediaLibrary#the-way" },
   { id: "gamble-love", label: "GAMBLE OF LOVE", tag: "Book · Music", angle: 180, color: "#18A0A8", description: "Relationship workbook and original song — social-emotional learning", path: "/mediaLibrary#gamble-love" },
   { id: "lead", label: "LEAD", tag: "Program · Beta", angle: 210, color: "#2E7D32", description: "Leadership, Expression, Arts & Diversity — structured youth program", path: "/programs/lead" },
-  { id: "rize-up", label: "RIZE UP", tag: "Program · Beta", angle: 240, color: "#2E7D32", description: "Youth empowerment and personal development curriculum", path: "/programs/rize-up" },
-  { id: "the-flow-center", label: "THE FLOW CENTER", tag: "Program · Beta", angle: 270, color: "#2E7D32", description: "Therapeutic online course — guided flow practice for emotional wellness & growth", path: "/programs/the-flow-center" },
+  { id: "rize-up", label: "RIZE UP", tag: "Program · Beta", angle: 240, color: "#2E7D32", description: "Youth empowerment and personal development curriculum", path: "/programs/rizeup" },
+  { id: "the-flow-center", label: "THE FLOW CENTER", tag: "Program · Beta", angle: 270, color: "#2E7D32", description: "Therapeutic online course — guided flow practice for emotional wellness & growth", path: "/programs/flowcenter" },
   { id: "sdd", label: "SDD DEVICE", tag: "Innovation · Coming Soon", angle: 300, color: "#B8860B", description: "Cutting-edge innovation in development — coming soon", path: "/programs#sdd" },
   { id: "scholarship", label: "CF SCHOLARSHIP", tag: "Emerging Creative", angle: 330, color: "#B8860B", description: "The Circular Flow Emerging Creative Scholarship — honoring legacy through art", path: "/programs#scholarship" },
 ];

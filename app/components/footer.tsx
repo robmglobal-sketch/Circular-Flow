@@ -87,8 +87,8 @@ export default function Footer() {
               <ul className="space-y-3 p-0 m-0 list-none">
                 {[
                   { label: "LEAD", path: "/programs/lead", beta: true },
-                  { label: "RIZE UP", path: "/programs/rize-up", beta: true },
-                  { label: "The Flow Center", path: "/programs/the-flow-center", beta: true },
+                  { label: "RIZE UP", path: "/programs/rizeup", beta: true },
+                  { label: "The Flow Center", path: "/programs/flowcenter", beta: true },
                   { label: "The Flow Room", path: "/mediaLibrary#the-flow-room" },
                   { label: "Foil to Film Workshop", path: "/community" },
                   { label: "Detropolis", path: "/mediaLibrary#detropolis" },
