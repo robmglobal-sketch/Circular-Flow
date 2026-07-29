@@ -24,7 +24,7 @@ export function YTEmbed({ videoId, title, className = "" }: YTEmbedProps) {
 
   return (
     <div
-      className={`relative w-full aspect-video rounded-[12px] overflow-hidden bg-slate-900 ${className}`}
+      className={`relative w-full aspect-video rounded-[10px] overflow-hidden bg-slate-900 ${className}`}
     >
       {playing ? (
         <iframe
@@ -82,7 +82,7 @@ interface AudioCardProps {
 export function AudioCard({ src, title, subtitle, accent = "#18A0A8" }: AudioCardProps) {
   return (
     <div
-      className="bg-white rounded-[12px] border border-slate-200 p-5 shadow-sm space-y-3"
+      className="bg-white rounded-[10px] border border-slate-200 p-5 shadow-sm space-y-3"
       style={{ borderLeft: `4px solid ${accent}` }}
     >
       <div className="space-y-0.5">
@@ -250,7 +250,7 @@ export function GalleryLightbox({ tiles, accent = "#18A0A8" }: GalleryLightboxPr
         >
           <div
             ref={dialogRef}
-            className="w-full max-w-3xl bg-slate-900 rounded-[16px] overflow-hidden shadow-2xl border border-white/10"
+            className="w-full max-w-3xl bg-slate-900 rounded-[10px] overflow-hidden shadow-2xl border border-white/10"
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">

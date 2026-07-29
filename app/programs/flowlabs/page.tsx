@@ -29,6 +29,7 @@ import {
   Briefcase,
   Cpu
 } from "@phosphor-icons/react";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const ACCENT = "#D4A017";
 
@@ -63,9 +64,17 @@ export default function ProgramFlowLabs() {
 
       {/* ══ 1. Hero Section ══ */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 sm:px-8 lg:px-12 border-b border-slate-200">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
           <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs 
+              items={[
+                { label: "Programs", href: "/programs" },
+                { label: "The Flow Labs" }
+              ]} 
+              className="mb-4"
+            />
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] bg-[#D4A017]/10 border border-[#D4A017]/30 text-[#D4A017]">
               <Sparkle size={18} weight="fill" className="animate-pulse" />
               <span className="font-mono text-xs tracking-widest font-extrabold uppercase">
@@ -98,7 +107,7 @@ export default function ProgramFlowLabs() {
           <div className="lg:col-span-5">
             <div className="bg-[#163A5F] rounded-[10px] p-8 shadow-2xl border border-[#D4A017]/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#D4A017]/20 via-transparent to-transparent pointer-events-none" />
-              <h3 className="font-heading text-xl font-extrabold text-white mb-6 border-b border-white/10 pb-4">
+              <h3 className="font-heading text-xl font-extrabold !text-white mb-6 border-b border-white/10 pb-4">
                 Program Details
               </h3>
               
@@ -231,7 +240,7 @@ export default function ProgramFlowLabs() {
           <div className="bg-[#163A5F] rounded-[10px] p-8 lg:p-10 text-white relative overflow-hidden shadow-lg border border-[#D4A017]/20">
             <div className="flex items-start gap-4">
               <Info size={32} weight="fill" className="text-[#D4A017] shrink-0 mt-1" />
-              <p className="font-sans text-lg lg:text-xl font-light italic text-white/90 leading-relaxed mb-0">
+              <p className="font-sans text-lg lg:text-xl font-light italic !text-white/90 leading-relaxed mb-0">
                 "Participants are encouraged to think critically, collaborate with others, embrace failure as part of learning, and transform creative ideas into meaningful solutions."
               </p>
             </div>

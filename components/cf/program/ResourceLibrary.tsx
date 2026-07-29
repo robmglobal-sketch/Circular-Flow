@@ -47,7 +47,7 @@ export default function ResourceLibrary({
           {groups.map((group, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[16px] p-8 border border-slate-200 shadow-sm space-y-6"
+              className="bg-white rounded-[10px] p-8 border border-slate-200 shadow-sm space-y-6"
             >
               <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
                 <div

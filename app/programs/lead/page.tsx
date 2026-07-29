@@ -36,6 +36,7 @@ import {
   Briefcase,
   FilmStrip
 } from "@phosphor-icons/react";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const ACCENT = "#18A0A8";
 
@@ -133,9 +134,17 @@ export default function ProgramLEAD() {
 
       {/* ══ 1. Hero Section ══ */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 sm:px-8 lg:px-12 border-b border-slate-200">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
           <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs 
+              items={[
+                { label: "Programs", href: "/programs" },
+                { label: "LEAD" }
+              ]} 
+              className="mb-4"
+            />
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] bg-[#18A0A8]/10 border border-[#18A0A8]/30 text-[#18A0A8]">
               <Sparkle size={18} weight="fill" className="animate-pulse" />
               <span className="font-mono text-xs tracking-widest font-extrabold uppercase">
@@ -168,7 +177,7 @@ export default function ProgramLEAD() {
           <div className="lg:col-span-5">
             <div className="bg-[#163A5F] rounded-[10px] p-8 shadow-2xl border border-[#18A0A8]/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#18A0A8]/20 via-transparent to-transparent pointer-events-none" />
-              <h3 className="font-heading text-xl font-extrabold text-white mb-6 border-b border-white/10 pb-4">
+              <h3 className="font-heading text-xl font-extrabold !text-white mb-6 border-b border-white/10 pb-4">
                 Program Details
               </h3>
               
@@ -394,44 +403,44 @@ export default function ProgramLEAD() {
                 
                 <div className="bg-white/5 border border-white/10 rounded-[10px] p-6 lg:p-8 hover:bg-white/10 transition-colors backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-                    <span className="font-mono text-3xl sm:text-4xl font-black text-white/20">
+                    <span className="font-mono text-3xl sm:text-4xl font-black !text-white">
                       {mission.num}
                     </span>
-                    <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#18A0A8]">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-extrabold !text-white">
                       {mission.title}
                     </h3>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                      <h4 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
+                      <h4 className="font-mono text-xs font-bold !text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
                         Focus Areas
                       </h4>
                       <ul className="space-y-2">
                         {mission.focus.map((f, i) => (
-                          <li key={i} className="font-sans text-sm text-white/80 flex items-start gap-2">
+                          <li key={i} className="font-sans text-sm !text-white flex items-start gap-2">
                             <span className="text-[#18A0A8] mt-0.5">•</span> {f}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
+                      <h4 className="font-mono text-xs font-bold !text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
                         Key Experiences
                       </h4>
                       <ul className="space-y-2">
                         {mission.experiences.map((exp, i) => (
-                          <li key={i} className="font-sans text-sm text-white/80 flex items-start gap-2">
+                          <li key={i} className="font-sans text-sm !text-white flex items-start gap-2">
                             <span className="text-[#18A0A8] mt-0.5">✦</span> {exp}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div className="md:border-l md:border-white/10 md:pl-8">
-                      <h4 className="font-mono text-xs font-bold text-[#18A0A8] uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
+                      <h4 className="font-mono text-xs font-bold !text-white uppercase tracking-widest mb-3 border-b border-white/10 pb-2">
                         Outcomes
                       </h4>
-                      <p className="font-sans text-sm text-white leading-relaxed">
+                      <p className="font-sans text-sm !text-white leading-relaxed">
                         {mission.outcomes}
                       </p>
                     </div>

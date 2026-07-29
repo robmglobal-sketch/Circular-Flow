@@ -17,7 +17,14 @@ import {
   Info,
   ListDashes,
   DownloadSimple,
+  Lightbulb,
+  Brain,
+  PaintBrush,
+  Plant,
+  ArrowUpRight,
 } from "@phosphor-icons/react";
+import VerticalAccordion from "@/app/components/VerticalAccordion";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const ACCENT = "#18A0A8";
 
@@ -44,15 +51,71 @@ const FAQ = [
   },
 ];
 
-const JOURNEY_STEPS = [
-  "Discover",
-  "Reflect",
-  "Understand",
-  "Express",
-  "Apply",
-  "Grow",
-  "Lead",
-  "Inspire",
+const JOURNEY_STEPS_DATA = [
+  {
+    step: "01",
+    stepNum: 1,
+    label: "EXPLORATION",
+    title: "Discover",
+    description: "Begin the journey by discovering new ideas, recognizing your inner potential, and opening up to the possibilities ahead.",
+    icon: Compass,
+  },
+  {
+    step: "02",
+    stepNum: 2,
+    label: "INTROSPECTION",
+    title: "Reflect",
+    description: "Take time to look inward, process your lived experiences, and build emotional awareness without judgment.",
+    icon: Lightbulb,
+  },
+  {
+    step: "03",
+    stepNum: 3,
+    label: "CLARITY",
+    title: "Understand",
+    description: "Gain deeper clarity on the connections between your thoughts, feelings, identity, and the choices you make.",
+    icon: Brain,
+  },
+  {
+    step: "04",
+    stepNum: 4,
+    label: "CREATIVITY",
+    title: "Express",
+    description: "Find your unique voice and creatively communicate your inner experiences to the world through various mediums.",
+    icon: PaintBrush,
+  },
+  {
+    step: "05",
+    stepNum: 5,
+    label: "ACTION",
+    title: "Apply",
+    description: "Take the insights and self-awareness you've gained and apply them purposefully to real-world situations and relationships.",
+    icon: CheckCircle,
+  },
+  {
+    step: "06",
+    stepNum: 6,
+    label: "DEVELOPMENT",
+    title: "Grow",
+    description: "Embrace the continuous changes and developments in your personal, emotional, and social life with resilience.",
+    icon: Plant,
+  },
+  {
+    step: "07",
+    stepNum: 7,
+    label: "GUIDANCE",
+    title: "Lead",
+    description: "Step forward as a leader, using your growth to guide others and foster a positive environment in your community.",
+    icon: ArrowUpRight,
+  },
+  {
+    step: "08",
+    stepNum: 8,
+    label: "IMPACT",
+    title: "Inspire",
+    description: "Leave a lasting impact by sharing your story, empowering those around you, and completing the generational cycle.",
+    icon: Sparkle,
+  },
 ];
 
 export default function ProgramTheFlow() {
@@ -66,9 +129,17 @@ export default function ProgramTheFlow() {
 
       {/* ══ 1. Hero Section ══ */}
       <section className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 px-6 sm:px-8 lg:px-12 border-b border-slate-200">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
           <div className="lg:col-span-7 space-y-6">
+            <Breadcrumbs 
+              items={[
+                { label: "Programs", href: "/programs" },
+                { label: "The Flow" }
+              ]} 
+              className="mb-4"
+            />
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[10px] bg-[#18A0A8]/10 border border-[#18A0A8]/30 text-[#18A0A8]">
               <Sparkle size={18} weight="fill" className="animate-pulse" />
               <span className="font-mono text-xs tracking-widest font-extrabold uppercase">
@@ -101,7 +172,7 @@ export default function ProgramTheFlow() {
           <div className="lg:col-span-5">
             <div className="bg-[#163A5F] rounded-[10px] p-8 shadow-2xl border border-[#18A0A8]/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#18A0A8]/20 via-transparent to-transparent pointer-events-none" />
-              <h3 className="font-heading text-xl font-extrabold text-white mb-6 border-b border-white/10 pb-4">
+              <h3 className="font-heading text-xl font-extrabold !text-white mb-6 border-b border-white/10 pb-4">
                 Program Details
               </h3>
               
@@ -231,28 +302,12 @@ export default function ProgramTheFlow() {
       {/* ══ 4. Flow Journey ══ */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#163A5F] !text-white overflow-hidden relative">
         <div className="max-w-[1440px] mx-auto relative z-10 text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-extrabold !text-white mb-16">
+          <h2 className="font-heading text-3xl sm:text-4xl font-extrabold !text-white mb-10">
             The Flow Journey
           </h2>
           
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {JOURNEY_STEPS.map((step, idx) => (
-              <React.Fragment key={step}>
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[10px] bg-[#18A0A8]/20 border-2 border-[#18A0A8]/50 flex items-center justify-center text-[#18A0A8] font-heading font-black text-xl mb-3 shadow-lg">
-                    {idx + 1}
-                  </div>
-                  <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider !text-white">
-                    {step}
-                  </span>
-                </div>
-                {idx < JOURNEY_STEPS.length - 1 && (
-                  <div className="hidden lg:flex items-center text-[#18A0A8]/40 pt-4">
-                    <ArrowRight size={24} weight="bold" />
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
+          <div className="max-w-4xl mx-auto text-left">
+            <VerticalAccordion items={JOURNEY_STEPS_DATA} theme="dark" />
           </div>
         </div>
       </section>
@@ -444,7 +499,7 @@ export default function ProgramTheFlow() {
             </p>
             
             <div className="relative z-10">
-              <h4 className="font-mono text-xs tracking-widest font-extrabold uppercase !text-white/50 mb-4 border-b border-white/10 pb-2">
+              <h4 className="font-mono text-xs tracking-widest font-extrabold uppercase text-[#18A0A8] mb-4 border-b border-white/10 pb-2">
                 COMING SOON
               </h4>
               <ul className="space-y-4">

@@ -18,10 +18,11 @@ interface ProgramShellProps {
     heroIntro: string;
     details: ProgramDetail[];
   };
+  breadcrumbs?: React.ReactNode;
   children: React.ReactNode;
 }
 
-export default function ProgramShell({ program, children }: ProgramShellProps) {
+export default function ProgramShell({ program, breadcrumbs, children }: ProgramShellProps) {
   const { name, tagline, accent, heroIntro, details } = program;
 
   return (
@@ -37,10 +38,12 @@ export default function ProgramShell({ program, children }: ProgramShellProps) {
 
       {/* Hero Section */}
       <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 px-6 sm:px-8 lg:px-12 border-b border-slate-200">
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
           {/* Left Column: Hero Content */}
           <div className="lg:col-span-7 space-y-6">
+            {breadcrumbs && <div className="mb-4">{breadcrumbs}</div>}
             <div
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[10px] border"
               style={{
@@ -78,14 +81,14 @@ export default function ProgramShell({ program, children }: ProgramShellProps) {
 
           {/* Right Column: Program Details Box */}
           <div className="lg:col-span-5">
-            <div className="bg-[#163A5F] rounded-[14px] p-8 shadow-2xl border border-white/10 relative overflow-hidden">
+            <div className="bg-[#163A5F] rounded-[10px] p-8 shadow-2xl border border-white/10 relative overflow-hidden">
               <div
                 className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle,_var(--tw-gradient-stops))] via-transparent to-transparent pointer-events-none opacity-30"
                 style={{
                   backgroundImage: `radial-gradient(circle, ${accent} 0%, transparent 70%)`,
                 }}
               />
-              <h3 className="font-heading text-xl font-extrabold text-white mb-6 border-b border-white/10 pb-4 tracking-wide uppercase">
+              <h3 className="font-heading text-xl font-extrabold !text-white mb-6 border-b border-white/10 pb-4 tracking-wide uppercase">
                 Program Quick Overview
               </h3>
 

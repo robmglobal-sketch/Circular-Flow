@@ -246,7 +246,7 @@ strong {
 /* Background utilities */
 .bg-surface { background-color: var(--color-surface); }
 .bg-surface-alt { background-color: var(--color-surface-alt); }
-.bg-primary { background-color: var(--color-primary); }
+.bg-primary { background-color: var(--color-primary); color: var(--color-surface); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-tertiary { background-color: var(--color-tertiary); }
 

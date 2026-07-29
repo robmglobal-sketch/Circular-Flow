@@ -36,10 +36,10 @@ export default function SelfPacedSection({
         </div>
 
         {/* Learning Journey Pipeline */}
-        <div className="bg-slate-900 text-white rounded-[16px] p-8 sm:p-10 shadow-xl space-y-6">
+        <div className="bg-slate-900 text-white rounded-[10px] p-8 sm:p-10 shadow-xl space-y-6">
           <div className="flex items-center gap-3 border-b border-white/10 pb-4">
             <Sparkle size={20} style={{ color: accent }} weight="fill" />
-            <h3 className="font-heading text-lg font-extrabold uppercase tracking-wide">
+            <h3 className="font-heading text-lg font-extrabold uppercase tracking-wide !text-white">
               Module Progression Pipeline
             </h3>
           </div>

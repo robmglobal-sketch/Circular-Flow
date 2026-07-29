@@ -54,7 +54,7 @@ export default function CardsSection({
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[14px] p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4 relative overflow-hidden group"
+              className="bg-white rounded-[10px] p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4 relative overflow-hidden group"
             >
               {/* Optional Top Accent Bar */}
               <div

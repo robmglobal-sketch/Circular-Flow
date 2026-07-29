@@ -91,16 +91,16 @@ export default function FaqSection() {
           
           {/* Left Column: Workshop Featured Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[500px] rounded-[16px] overflow-hidden shadow-sm border border-slate-200 group">
+            <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[500px] rounded-[10px] overflow-hidden shadow-sm border border-slate-200 group">
               <img
                 src={WORKSHOP_IMG}
-                alt="Circular Flow community workshop space"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                alt="Youth engaged in interactive creative workshop"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#061423]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               
               {/* Bottom Info Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/90 backdrop-blur-md rounded-[12px] border border-white/40 shadow-sm">
+              <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/90 backdrop-blur-md rounded-[10px] border border-white/40 shadow-sm">
                 <div className="font-heading text-base font-extrabold !text-black mb-1">
                   Have more questions?
                 </div>
@@ -120,7 +120,7 @@ export default function FaqSection() {
                 <div
                   key={idx}
                   className={`
-                    rounded-[14px] border transition-all duration-300 overflow-hidden
+                    rounded-[10px] border transition-all duration-300 overflow-hidden
                     ${isOpen 
                       ? "bg-white border-[#18A0A8] shadow-sm" 
                       : "bg-[#F8FAFC] border-slate-200/80 hover:border-[#18A0A8]/50"

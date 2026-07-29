@@ -42,7 +42,7 @@ export default function ProgramAbout({
         {/* 3 Columns: Designed For, Formats, Outcomes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Designed For */}
-          <div className="bg-slate-50 rounded-[14px] p-8 border border-slate-200/80 space-y-6">
+          <div className="bg-slate-50 rounded-[10px] p-8 border border-slate-200/80 space-y-6">
             <div className="flex items-center gap-3">
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
@@ -65,7 +65,7 @@ export default function ProgramAbout({
           </div>
 
           {/* Delivery Formats */}
-          <div className="bg-slate-50 rounded-[14px] p-8 border border-slate-200/80 space-y-6">
+          <div className="bg-slate-50 rounded-[10px] p-8 border border-slate-200/80 space-y-6">
             <div className="flex items-center gap-3">
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
@@ -88,7 +88,7 @@ export default function ProgramAbout({
           </div>
 
           {/* Core Outcomes */}
-          <div className="bg-slate-50 rounded-[14px] p-8 border border-slate-200/80 space-y-6">
+          <div className="bg-slate-50 rounded-[10px] p-8 border border-slate-200/80 space-y-6">
             <div className="flex items-center gap-3">
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center text-white"

@@ -66,7 +66,7 @@ export default function BookProgram({
 
         {/* Right Column: CTA Box */}
         <div className="lg:col-span-5">
-          <div className="bg-white/5 rounded-[20px] p-8 border border-white/15 backdrop-blur-sm space-y-6">
+          <div className="bg-white/5 rounded-[10px] p-8 border border-white/15 backdrop-blur-sm space-y-6">
             <h3 className="font-heading text-2xl font-extrabold text-white">
               Get Started with {program}
             </h3>

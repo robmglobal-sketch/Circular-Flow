@@ -19,6 +19,7 @@ import {
 } from "@phosphor-icons/react";
 import { GalleryLightbox, YTEmbed } from "@/components/cf/MediaEmbed";
 import type { GalleryTile } from "@/components/cf/MediaEmbed";
+import HeroImageGrid from "../components/HeroImageGrid";
 
 const WORKSHOP_IMG =
   "https://media.base44.com/images/public/6a63c33c63a63db25193f4e5/9b9c41626_generated_23a687b9.png";
@@ -129,7 +130,8 @@ export default function CommunityPage() {
 
       {/* ══ Hero & Proof of Concept Header ══ */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 relative z-10">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Header Content */}
             <div className="lg:col-span-7 space-y-6">
@@ -177,25 +179,7 @@ export default function CommunityPage() {
 
             {/* Right Hero Flagship Image Showcase */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-[10px] overflow-hidden border-2 border-slate-200/90 shadow-2xl group">
-                <img
-                  src={WORKSHOP_IMG}
-                  alt="Youth participating in Circular Flow's Foil to Film workshop"
-                  className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#163A5F]/80 via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-                  <div className="bg-white/95 backdrop-blur-md px-4 py-2 rounded-[10px] shadow-lg border border-white/40">
-                    <div className="font-mono text-[10px] text-[#18A0A8] font-extrabold tracking-widest uppercase">
-                      FLAGSHIP INITIATIVE
-                    </div>
-                    <div className="font-heading text-sm font-bold text-slate-900">
-                      Foil to Film Workshop
-                    </div>
-                  </div>
-                  <span className="text-3xl filter drop-shadow-md">🎨</span>
-                </div>
-              </div>
+              <HeroImageGrid />
             </div>
           </div>
         </div>
@@ -385,18 +369,18 @@ export default function CommunityPage() {
               <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-[var(--color-secondary)]">
                 Merch Store
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl font-extrabold !text-white tracking-tight">
                 Wear the{" "}
                 <span className="heading-italic font-normal text-[var(--color-secondary)]">Flow</span>
               </h2>
-              <p className="font-sans text-lg text-slate-300 font-light leading-relaxed">
+              <p className="font-sans text-lg  !text-white font-light leading-relaxed">
                 Support Circular Flow's mission through original merchandise — every purchase directly funds youth programs, workshops, and creative initiatives.
               </p>
-              <Link href="/Contact" className="no-underline inline-flex items-center gap-2 font-heading text-sm font-bold text-[var(--color-secondary)] hover:text-white transition-colors uppercase tracking-wider">
+              {/* <Link href="/Contact" className="no-underline inline-flex items-center gap-2 font-heading text-sm font-bold text-[var(--color-secondary)] hover:text-white transition-colors uppercase tracking-wider">
                 Shop Circular Flow
                 <ArrowRight size={16} weight="bold" />
-              </Link>
-            </div>
+              </Link>*/}
+            </div> 
           </div>
         </div>
       </section>

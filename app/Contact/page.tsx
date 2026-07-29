@@ -12,6 +12,7 @@ import {
   Globe,
   ChatCircleDots,
 } from "@phosphor-icons/react";
+import HeroImageGrid from "../components/HeroImageGrid";
 
 export default function ContactPage() {
   return (
@@ -22,8 +23,10 @@ export default function ContactPage() {
 
       {/* ══ Hero Section ══ */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 relative z-10">
-        <div className="max-w-[1440px] mx-auto flex flex-col items-start">
-          {/* Paintbrush Header Badge */}
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+          <div className="flex flex-col items-start">
+            {/* Paintbrush Header Badge */}
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group">
             <svg
               className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
@@ -57,6 +60,8 @@ export default function ContactPage() {
           <p className="font-sans text-base sm:text-lg lg:text-xl !text-black font-light max-w-3xl leading-relaxed mb-0">
             Have a question about our creative workshops, online learning platform, or community mentorship? We invite educators, community centers, mentors, and students to reach out and start a conversation.
           </p>
+          </div>
+          <HeroImageGrid />
         </div>
       </section>
 

@@ -16,6 +16,7 @@ import {
   PlayCircle,
 } from "@phosphor-icons/react";
 import { YTEmbed, VideoGrid, AudioCard } from "@/components/cf/MediaEmbed";
+import HeroImageGrid from "../components/HeroImageGrid";
 
 const CATEGORIES = [
   { id: "all", label: "ALL MEDIA", icon: SquaresFour },
@@ -378,8 +379,10 @@ export default function MediaLibraryPage() {
 
       {/* ══ Hero Section ══ */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 relative z-10">
-        <div className="max-w-[1440px] mx-auto flex flex-col items-start">
-          {/* Paintbrush Header Badge */}
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+          <div className="flex flex-col items-start">
+            {/* Paintbrush Header Badge */}
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group">
             <svg
               className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
@@ -412,6 +415,8 @@ export default function MediaLibraryPage() {
           <p className="font-sans text-base sm:text-lg lg:text-xl !text-black font-light max-w-3xl leading-relaxed mb-0">
             Nearly thirty years of books, films, music, workshops, and community documentation organized and accessible. Every piece a proof of the mission.
           </p>
+          </div>
+          <HeroImageGrid />
         </div>
       </section>
 
@@ -428,7 +433,7 @@ export default function MediaLibraryPage() {
                   setActiveCategory(cat.id);
                   setExpanded(null);
                 }}
-                className={`flex items-center gap-2.5 px-5 py-3 rounded-[14px] font-heading text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer border-none focus:outline-none uppercase tracking-wider font-bold ${
+                className={`flex items-center gap-2.5 px-5 py-3 rounded-[10px] font-heading text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer border-none focus:outline-none uppercase tracking-wider font-bold ${
                   isActive
                     ? "bg-[var(--color-secondary)] text-white shadow-sm scale-[1.02]"
                     : "bg-transparent text-slate-600 hover:text-black hover:bg-slate-100/80"
@@ -467,7 +472,7 @@ export default function MediaLibraryPage() {
                 <div
                   key={item.id}
                   id={item.section}
-                  className={`bg-white border transition-all duration-300 rounded-[22px] overflow-hidden ${
+                  className={`bg-white border transition-all duration-300 rounded-[10px] overflow-hidden ${
                     isExpanded
                       ? "border-[var(--color-secondary)] shadow-xl ring-2 ring-[var(--color-secondary)]/10"
                       : "border-slate-200/90 shadow-2xs hover:border-[var(--color-secondary)]/60 hover:shadow-md"
@@ -605,7 +610,7 @@ export default function MediaLibraryPage() {
                           )}
 
                           {/* Complete Checklist of Items Included */}
-                          <div className="bg-white border border-slate-200 rounded-[18px] p-6 sm:p-7 shadow-2xs">
+                          <div className="bg-white border border-slate-200 rounded-[10px] p-6 sm:p-7 shadow-2xs">
                             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100">
                               <PlayCircle size={20} weight="duotone" className="text-[var(--color-secondary)]" />
                               <h4 className="font-heading text-sm text-[var(--color-primary)] uppercase tracking-wider font-extrabold mb-0">
@@ -640,7 +645,7 @@ export default function MediaLibraryPage() {
                         </div>
 
                         {/* Right Sidebar Formats & Action */}
-                        <div className="lg:col-span-4 flex flex-col justify-between bg-white border border-slate-200/90 rounded-[20px] p-6 sm:p-8 shadow-2xs h-full">
+                        <div className="lg:col-span-4 flex flex-col justify-between bg-white border border-slate-200/90 rounded-[10px] p-6 sm:p-8 shadow-2xs h-full">
                           <div>
                             <h4 className="font-heading text-xs uppercase font-extrabold tracking-widest text-[#18A0A8] mb-4">
                               AVAILABLE FORMATS
@@ -668,7 +673,7 @@ export default function MediaLibraryPage() {
 
                           <Link
                             href="/#partner"
-                            className="w-full inline-flex items-center justify-center gap-2 font-heading text-sm font-extrabold uppercase tracking-wider text-white bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-dark)] active:scale-[0.98] rounded-[14px] px-6 py-4 shadow-sm transition-all group/btn"
+                            className="w-full inline-flex items-center justify-center gap-2 font-heading text-sm font-extrabold uppercase tracking-wider text-white bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-dark)] active:scale-[0.98] rounded-[10px] px-6 py-4 shadow-sm transition-all group/btn"
                           >
                             <span>Request Access</span>
                             <CaretRight

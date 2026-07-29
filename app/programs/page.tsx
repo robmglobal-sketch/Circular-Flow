@@ -18,6 +18,8 @@ import {
   Cpu,
   Heart,
 } from "@phosphor-icons/react";
+import HeroImageGrid from "../components/HeroImageGrid";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const PROGRAMS = [
   {
@@ -114,8 +116,15 @@ export default function ProgramsPage() {
 
       {/* ══ Hero Section ══ */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 relative z-10 border-b border-slate-200/80">
-        <div className="max-w-[1440px] mx-auto flex flex-col items-start">
-          {/* Paintbrush Header Badge */}
+        <div className="absolute inset-0 pointer-events-none z-0 hero-grid-pattern" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+          <div className="flex flex-col items-start">
+            <Breadcrumbs 
+              items={[
+                { label: "Programs" }
+              ]} 
+            />
+            {/* Paintbrush Header Badge */}
           <div className="relative inline-flex items-center gap-2.5 px-6 py-2.5 mb-6 select-none group">
             <svg
               className="absolute inset-0 w-full h-full text-[var(--color-secondary)]/20 pointer-events-none transform -rotate-1 group-hover:rotate-0 transition-transform duration-300"
@@ -148,6 +157,8 @@ export default function ProgramsPage() {
           <p className="font-sans text-base sm:text-lg lg:text-xl !text-black font-light max-w-3xl leading-relaxed mb-0">
             The Circular Flow Learning Platform weaves five interconnected programs The Flow, The Flow Center, LEAD, RIZE UP, and The Flow Labs into one ecosystem supporting personal growth, therapeutic development, creative expression, innovation, and lifelong learning. All programs are currently in Coming Soon mode.
           </p>
+          </div>
+          <HeroImageGrid />
         </div>
       </section>
 

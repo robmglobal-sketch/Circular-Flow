@@ -255,7 +255,7 @@ export default function EcosystemSection() {
                   {hoveredNode.label}
                 </h3>
 
-                <p className="font-sans text-white/80 text-base sm:text-lg leading-relaxed mb-8">
+                <p className="font-sans !text-white text-base sm:text-lg leading-relaxed mb-8">
                   {hoveredNode.description}
                 </p>
 

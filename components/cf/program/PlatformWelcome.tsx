@@ -12,7 +12,7 @@ export default function PlatformWelcome({ accent, programLine }: PlatformWelcome
   return (
     <section className="py-16 px-6 sm:px-8 lg:px-12 bg-slate-50 border-b border-slate-200">
       <div className="max-w-[1440px] mx-auto">
-        <div className="bg-white rounded-[16px] p-8 sm:p-12 shadow-sm border border-slate-200/80 relative overflow-hidden flex flex-col md:flex-row gap-8 items-center justify-between">
+        <div className="bg-white rounded-[10px] p-8 sm:p-12 shadow-sm border border-slate-200/80 relative overflow-hidden flex flex-col md:flex-row gap-8 items-center justify-between">
           <div className="space-y-4 max-w-3xl">
             <div
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold tracking-wider uppercase"

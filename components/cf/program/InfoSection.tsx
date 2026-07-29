@@ -22,7 +22,7 @@ export default function InfoSection({
     <section className="py-16 px-6 sm:px-8 lg:px-12 bg-white border-b border-slate-200">
       <div className="max-w-[1440px] mx-auto">
         <div
-          className="rounded-[16px] p-8 sm:p-10 border shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6"
+          className="rounded-[10px] p-8 sm:p-10 border shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6"
           style={{
             backgroundColor: `${accent}0A`,
             borderColor: `${accent}30`,

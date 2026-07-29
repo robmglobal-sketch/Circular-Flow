@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Sparkle, MonitorPlay, BookOpen, Warning } from "@phosphor-icons/react";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 import ProgramShell from "@/components/cf/program/ProgramShell";
 import PlatformWelcome from "@/components/cf/program/PlatformWelcome";
 import ProgramAbout from "@/components/cf/program/ProgramAbout";
@@ -32,6 +33,7 @@ const MODULES = [
 export default function ProgramFlowCenter() {
   return (
     <ProgramShell
+      breadcrumbs={<Breadcrumbs items={[{ label: "Programs", href: "/programs" }, { label: "The Flow Center" }]} />}
       program={{
         name: "The Flow Center",
         tagline: "Online Learning Platform",
@@ -110,7 +112,7 @@ export default function ProgramFlowCenter() {
         callout="The Flow Center is a wellness and learning experience, not a substitute for clinical care. If you are in crisis, please contact a licensed provider or emergency services."
       />
 
-      <BookProgram
+      {/* <BookProgram
         accent={ACCENT}
         program="The Flow Center"
         eyebrow="Book The Flow Center"
@@ -118,7 +120,7 @@ export default function ProgramFlowCenter() {
         intro="The Flow Center will be available for individuals, schools, families, and organizations — on its own or as a companion to in-person programming."
         formats={["Individual enrollment", "School & classroom licenses", "Family access", "Organization & team cohorts", "Companion to in-person programs", "Self-Paced (Coming Soon)"]}
         contacts={["Join the Waitlist", "Request a Demo", "School & District Inquiries", "Organization Licensing", "Partner with The Flow Center"]}
-      />
+      /> */}
     </ProgramShell>
   );
 }
