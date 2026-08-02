@@ -17,9 +17,9 @@ export default function Hero() {
       <div className="absolute top-[40%] right-10 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[var(--color-tertiary)]/10 to-transparent blur-3xl pointer-events-none z-0" />
 
       {/* ── Top Header Section ── */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-12 lg:mb-16">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-[var(--space-lg)] lg:px-[var(--space-xl)] text-center mb-10 lg:mb-16">
         <FadeUp delay={0.1}>
-          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold !text-black tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
+          <h1 className="text-[40px] sm:text-5xl md:text-6xl lg:text-[3.75rem] font-bold !text-black tracking-tight leading-[1.15] max-w-5xl mx-auto mb-6">
             Where Storytelling, Technology, Education, and Community{" "}
             <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
               Flow Together
