@@ -58,7 +58,7 @@ export default function ProgramShell({ program, breadcrumbs, children }: Program
               </span>
             </div>
 
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-extrabold !text-black tracking-tight leading-[1.1]">
+            <h1 className="font-heading text-[40px] sm:text-6xl lg:text-7xl font-extrabold !text-black tracking-tight leading-[1.1]">
               {name.toUpperCase()}{" "}
               <span className="heading-italic font-normal block sm:inline" style={{ color: accent }}>
                 {tagline}
