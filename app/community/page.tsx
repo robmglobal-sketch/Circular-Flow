@@ -158,7 +158,7 @@ export default function CommunityPage() {
                 </span>
               </div>
 
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.14]">
+              <h1 className="font-heading text-[40px] sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.14]">
                 Proof of{" "}
                 <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
                   Concept

@@ -405,7 +405,7 @@ export default function MediaLibraryPage() {
             </span>
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.14] max-w-4xl mb-6">
+          <h1 className="font-heading text-[40px] sm:text-5xl lg:text-6xl font-extrabold !text-black tracking-tight leading-[1.14] max-w-4xl mb-6">
             The Circular Flow<br />
             <span className="heading-italic text-[var(--color-secondary)] font-normal inline-block">
               Media Library
